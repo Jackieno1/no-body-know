@@ -11,14 +11,14 @@ module RFv2 #(parameter Width=32)(
     input  logic LB, LH, LBU, LHU,  
     input  logic ra_signal,	// take from controller
     output logic [Width - 1:0] busA,
-    output logic [Width - 1:0] busB,
-    output logic [Width - 1:0] d[32]
+    output logic [Width - 1:0] busB
 );
 //local decleration
 /* verilator lint_off UNUSED */
 logic [Width-1:0] Y;
 /* verilator lint_on UNUSED */
 logic [Width-1:0] temp;
+logic [Width - 1:0] d[32];
 logic ra; // return address enable
 always_comb begin 
  if(LB)

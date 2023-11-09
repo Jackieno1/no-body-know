@@ -1,15 +1,16 @@
-
-/* verilator lint_off UNUSED*/
 /* verilator lint_off UNOPTFLAT */
 module Branch_Comp #(parameter Width = 32)(
+//inputs
 	input logic [Width-1:0] DataA,DataB,
 	input logic BrUn,
-
+//output
 	output logic BrLt,BrEq
 );
 logic [Width-1:0] ogt, oeq, olt;
 logic [1:0] sign;
+/* verilator lint_off UNUSED */
 logic temp_AgtB,temp_AeqB,temp_AltB;
+/* verilator lint_on UNUSED */
 genvar i;
 generate
 for ( i = Width-1; i >= 0; i = i - 1) begin
@@ -64,6 +65,5 @@ always_comb begin
   	BrLt = temp_AltB;
   end
 end
-/* verilator lint_on UNUSED*/
 /* verilator lint_on UNOPTFLAT */
 endmodule

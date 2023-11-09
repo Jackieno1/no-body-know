@@ -11,7 +11,7 @@
 #include <verilated_fst_c.h>
 #include "Vtop.h"
 
-#define MAX_SIM       10000
+//#define MAX_SIM       10000
 vluint64_t sim_unit = 0;
 vluint64_t sim_time = 0;
 

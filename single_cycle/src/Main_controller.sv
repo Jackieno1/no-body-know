@@ -1,10 +1,9 @@
-/* verilator lint_off UNOPTFLAT */
 module Main_controller #(parameter Width=32)(
-	//input
+	//inputs
 	input logic [Width-26:0] opcode,
 	input logic [Width-30:0] funct3,
 	input logic BrLt,BrEq,
-	//output
+	//outputs
 	output logic RegWen,BSel,st_en,
 	output logic [1:0]WBSel,
 	output logic LB, LH, LBU, LHU, SB, SH,BrUn,PCSel,ASel,
@@ -13,7 +12,9 @@ module Main_controller #(parameter Width=32)(
 	output logic ra_signal
 	);
 	//local decleration
+	/* verilator lint_off UNOPTFLAT */
 	logic [20:0] control_signal;
+	/* verilator lint_on UNOPTFLAT */
 	assign {RegWen,BSel,st_en,
 			WBSel,
 			LB, LH, LBU, LHU, SB, SH,BrUn,PCSel,ASel,
@@ -91,6 +92,5 @@ always_comb begin
  default: 	 control_signal = 21'bxxxxxxxxxxxxxxxxxxxxx;
  endcase
 end
-/* verilator lint_on UNOPTFLAT */
 endmodule 							      
   								  
