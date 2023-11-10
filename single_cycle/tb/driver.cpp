@@ -62,7 +62,7 @@ void tb_code(Vtop *dut, VerilatedFstC *vtrace, vluint64_t sim_unit,char string[5
 	printf("%-25s%-20x%-20x%-20s\n", "LW/SW ",dut->io_sw_i, dut->io_hex0_o,"\033[1;32mCORRECT\033[0m");
     }
     else {
-    printf("%-25s%-20x%-20x%-20s\n", "LW/SW ",dut->io_sw_i, dut->io_hex0_o,"\033[1;31mINCORRECT\033[0m)");
+    printf("%-25s%-20x%-20x%-20s\n", "LW/SW ",dut->io_sw_i, dut->io_hex0_o,"\033[1;31mINCORRECT\033[0m");
     }
     // DONE LH
     
