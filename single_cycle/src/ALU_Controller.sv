@@ -43,11 +43,8 @@ always_comb begin
   	     4'b1101: control = 4'b0111; 	// srai
   	     default: control = 4'bxxxx;
   	     endcase
-  3'b100: case(funct3)
-  		 3'b001:  control = 4'b0000; // add rs1 and imm (jalr)
-  		 3'b000:  control = 4'b1011; // keep rs1
-  		 default: control = 4'bxxxx;
-  		 endcase	
+
+  		 	
   default:  control = 4'bxxxx;
   endcase
 end

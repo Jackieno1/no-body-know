@@ -86,7 +86,7 @@ always_comb begin
   				endcase
   			  end
  7'b1101111: control_signal = 21'b11010xxxxxxx110110001; // jal
- 7'b1100111: control_signal = 21'b11010xxxxxxx100001001; // jalr
+ 7'b1100111: control_signal = 21'b11010xxxxxxx100000001; // jalr
  7'b0010111: control_signal = 21'b11001xxxxxxx011000000; // auipc 
  7'b0110111: control_signal = 21'b11001xxxxxxx0x1000010; // lui
  default: 	 control_signal = 21'bxxxxxxxxxxxxxxxxxxxxx;

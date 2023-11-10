@@ -22,9 +22,9 @@ logic [Width - 1:0] d[32];
 logic ra; // return address enable
 always_comb begin 
  if(LB)
-  temp = {{Width-8{busW[Width-1]}},busW[7:0]};
+  temp = {{Width-8{busW[7]}},busW[7:0]};
  else if (LH)
-  temp = {{Width-16{busW[Width-1]}},busW[15:0]};  
+  temp = {{Width-16{busW[15]}},busW[15:0]};  
  else if (LBU)
   temp = {{Width-8{1'b0}},busW[7:0]};
  else if (LHU)

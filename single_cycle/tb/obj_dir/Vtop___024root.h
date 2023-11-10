@@ -220,9 +220,6 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__1__KET____DOT__u____pinNumber6;
         CData/*0:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__0__KET____DOT__u____pinNumber8;
         CData/*0:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__0__KET____DOT__u____pinNumber6;
-        CData/*3:0*/ top__DOT__singleCycle__DOT__s11__DOT__st_sel_i;
-        CData/*1:0*/ top__DOT__singleCycle__DOT__s11__DOT__flag_peri;
-        CData/*3:0*/ top__DOT__singleCycle__DOT__sa__DOT____Vxrand_h96ff575f__3;
         CData/*3:0*/ top__DOT__singleCycle__DOT__sa__DOT____Vxrand_h96ff575f__2;
         CData/*3:0*/ top__DOT__singleCycle__DOT__sa__DOT____Vxrand_h96ff575f__1;
         CData/*3:0*/ top__DOT__singleCycle__DOT__sa__DOT____Vxrand_h96ff575f__0;
@@ -277,11 +274,11 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__7__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__6__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__6__KET____DOT__u____pinNumber6;
-    };
-    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__5__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__5__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber8;
+    };
+    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber6;
@@ -343,11 +340,11 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__6__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__5__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__5__KET____DOT__u____pinNumber6;
-    };
-    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber8;
+    };
+    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__2__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT____Vcellout__genblk1__BRA__2__KET____DOT__u____pinNumber6;
@@ -409,11 +406,11 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__5__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__4__KET____DOT__u____pinNumber6;
-    };
-    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__3__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__2__KET____DOT__u____pinNumber8;
+    };
+    struct {
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__2__KET____DOT__u____pinNumber6;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__1__KET____DOT__u____pinNumber8;
         CData/*0:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT____Vcellout__genblk1__BRA__1__KET____DOT__u____pinNumber6;
@@ -440,7 +437,6 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__singleCycle__DOT__Imm;
         IData/*31:0*/ top__DOT__singleCycle__DOT__outmux;
         IData/*31:0*/ top__DOT__singleCycle__DOT__outmux_branch;
-        IData/*31:0*/ top__DOT__singleCycle__DOT__ld_data;
         IData/*31:0*/ top__DOT__singleCycle__DOT__WB;
         IData/*31:0*/ top__DOT__singleCycle__DOT__outmux_pc;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT__Y;
@@ -475,12 +471,12 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x27____pinNumber2;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x28____pinNumber2;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x29____pinNumber2;
-    };
-    struct {
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s7__DOT__ogt;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s7__DOT__oeq;
+    };
+    struct {
         IData/*31:0*/ top__DOT__singleCycle__DOT__s7__DOT__olt;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s10__DOT__s2__DOT__ogt;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s10__DOT__s2__DOT__oeq;
@@ -488,11 +484,23 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT__ogt;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT__oeq;
         IData/*31:0*/ top__DOT__singleCycle__DOT__s10__DOT__s1__DOT__olt;
-        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT____Vxrand_h96fd10a2__0;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__trash;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__lcd_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__ledg_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__ledr_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex0_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex1_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex2_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex3_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex4_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex5_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex6_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__hex7_reg;
+        IData/*31:0*/ top__DOT__singleCycle__DOT__s11__DOT__sw_reg;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h8e767337__1;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h95f09b13__0;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h95de709f__0;
-        IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h9631c9e2__0;
+        IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h9631dff0__0;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h963224f4__0;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h8e767337__0;
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h9a0ef897__9;
@@ -533,11 +541,13 @@ class Vtop___024root final : public VerilatedModule {
         IData/*20:0*/ top__DOT__singleCycle__DOT__ss__DOT__control_signal;
         IData/*31:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s7__DOT__oeq;
         IData/*31:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s2__DOT__oeq;
+    };
+    struct {
         IData/*31:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__s10__DOT__s1__DOT__oeq;
         IData/*20:0*/ __Vchglast__TOP__top__DOT__singleCycle__DOT__ss__DOT__control_signal;
         VlUnpacked<IData/*31:0*/, 2048> top__DOT__singleCycle__DOT__s4__DOT__imem;
         VlUnpacked<IData/*31:0*/, 32> top__DOT__singleCycle__DOT__s6__DOT__d;
-        VlUnpacked<IData/*31:0*/, 1024> top__DOT__singleCycle__DOT__s11__DOT__data;
+        VlUnpacked<IData/*31:0*/, 512> top__DOT__singleCycle__DOT__s11__DOT__mem;
         VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
     };
 

@@ -1,95 +1,183 @@
 module LSU #(parameter Width = 32 ) (
-input logic[11:0] addr, // alu
-input logic[Width-1:0] st_data, // dataB
+input logic[11:0] addr, // address memory
+input logic[Width-1:0] st_data, // 32 bit data in (data store)
 input logic[Width-1:0] io_sw,
-input logic [1:0]s_type, //control_signal[10:11] sb sh sw
+input logic [1:0]s_type, //  COMBINATION OF SB AND SH SIGAl , 10 is SB, 01 is SW
 output logic [Width-1:0] ld_data, // 32bit data out
-output logic [Width-1:0] io_lcd,io_ledg,io_ledr, 
-output logic [Width-1:0] io_hex0,io_hex1,io_hex2,io_hex3,io_hex4,io_hex5,io_hex6,io_hex7,
+output logic [Width-1:0] io_lcd,io_ledg,io_ledr = 32'd0 , 
+output logic [Width-1:0] io_hex0,io_hex1,io_hex2,io_hex3,io_hex4,io_hex5,io_hex6,io_hex7 = 32'd0 ,
 input logic st_en, // read write enable
 input logic rst_ni,
 input logic clk_i
 );
- // 4096Byte for byte-addresses => assign 4096/4 slot to contains 4 byte data
- // 4094 : 4 = 1024 slots
-logic [3:0] st_sel_i; // all = 1
-logic [3:0][7:0] data [0:1023] = '{1024{32'h0}} ;
-logic [1:0] flag_peri = 2'b0 ; // 0 is input peripheral, 1 is reserse ,2 is ouput peripheral. 
-/* verilator lint_off UNUSED */
-  logic [1:0]trash;
-  assign trash = addr[1:0];
-  
- /* verilator lint_on UNUSED */
 
-  always_ff @(posedge clk_i) begin : proc_data
-  if(~rst_ni) 
-   data [0:1023] <= '{1024{32'h0}} ;
-  else
-  data[320] <= io_sw;  // 0x900 >> 2 = 576
-  if (flag_peri == 2'd2) begin // output peripheral and data memory which store value
-     if (st_en) begin
-    // with 32 bit data, bitmask has 3 bits
-    // in order to decide write 1 byte, 2 bytes or 4 bytes
-      if (st_sel_i[0]) begin
-      // take bit 12:2 mean shift to left >> 2, mean divide 4
-        data[addr[11:2]][0] <= st_data[ 7: 0];
-      end
-      if (st_sel_i[1]) begin
-        data[addr[11:2]][1] <= st_data[15: 8];
-      end
-      if (st_sel_i[2]) begin
-        data[addr[11:2]][2] <= st_data[23:16];
-      end
-      if (st_sel_i[3]) begin
-        data[addr[11:2]][3] <= st_data[31:24];
-      end
-  end 
-  else // else is input peripheral and reserse, cannot store value
-    begin 
-  	   data[addr[11:2]] <=  data[addr[11:2]] ; 
-    end 
-  end
-end
-always_comb 
-begin 
-// decode store_data base on flag sb sh sw
-	case(s_type)
-	2'b10: st_sel_i = 4'b0001;//sb
-	2'b01: st_sel_i = 4'b0011;//sh
-	default: st_sel_i = 4'b1111; //sw
-	endcase
-// distrisbute flag_peri to know what component part memory
-	case(addr[11:8])
-  	4'hf: flag_peri = 2'd1; 
-  	4'he: flag_peri = 2'd1; 
-  	4'hd: flag_peri = 2'd1; 
-  	4'hc: flag_peri = 2'd1; 
-  	4'hb: flag_peri = 2'd1; 
-  	4'ha: flag_peri = 2'd1; 
-  	4'h9: flag_peri = 2'd1; 
-  	4'h8: flag_peri = 2'd0; // input 
-  	default: flag_peri = 2'd2; // other signal
-  	endcase
-	
-	if (flag_peri == 2'd1) begin 
-	ld_data = 'x; // don't care
+
+
+/* verilator lint_off UNUSED */
+  logic unused;
+  assign unused = |{addr[1:0],rst_ni,addr[11]};
+  logic [31:0]trash;
+ /* verilator lint_on UNUSED */
+  // Memory with 4096 bytes
+logic [31:0] mem [0:511]; // 2KB with byte-address memory => 512 slot words 4 bytes
+ 
+// Output Peripheral Register
+logic [Width-1:0] lcd_reg,ledg_reg,ledr_reg; 
+logic [Width-1:0] hex0_reg,hex1_reg,hex2_reg,hex3_reg,
+			      hex4_reg,hex5_reg,hex6_reg,hex7_reg;
+// Input Peripheral Regiser 
+logic [Width-1:0] sw_reg ;
+
+always_ff @(posedge clk_i) begin 
+if (~rst_ni) begin 
+ mem  <= '{512{32'h0}}; 
+sw_reg <= 32'd0;
+lcd_reg <= 32'd0;
+ledg_reg <= 32'd0;
+hex0_reg <= 32'd0;
+hex1_reg <= 32'd0;
+hex2_reg <= 32'd0;
+hex3_reg <= 32'd0;
+hex4_reg <= 32'd0;
+hex5_reg <= 32'd0;
+hex6_reg <= 32'd0;
+hex7_reg <= 32'd0;
+end 
+else begin
+	sw_reg <= io_sw; 
+if (st_en) begin  // st_en 
+/* 
+	s_type
+*/
+	if (addr[11]== 1'b0) begin   // addr is 0b0___ __
+//__ meaning addr < 0x800
+  		if ( s_type == 2'b10 )  // SB => store 8 LSB
+		mem[addr[10:2]][7:0] <=  st_data [7:0] ;
+ 		else if ( s_type == 2'b01 )  // SW  => store 16 LSB
+		mem[addr[10:2]][15:0] <=  st_data [15:0] ; 
+		else 
+		mem[addr[10:2]] <=  st_data ; 
 	end 
-	else 
-	begin
-	ld_data = data[addr[11:2]]; 
-	end
-  	//specify output sperical to outside
-  	//specify output sperical to outside
-io_lcd    = data[296];  // 0x490 >> 2 = 292
-io_ledg   = data[292];  // 0x480 >> 2 = 288
-io_ledr   = data[288];  // 0x470 >> 2 = 284
-io_hex7 = data[284];  // 0x460 >> 2 = 280
-io_hex6 = data[280];  // 0x450 >> 2 = 276
-io_hex5 = data[276];  // 0x440 >> 2 = 272
-io_hex4 = data[272];  // 0x430 >> 2 = 268
-io_hex3 = data[268];  // 0x420 >> 2 = 264
-io_hex2 = data[264];  // 0x410 >> 2 = 260
-io_hex1 = data[260];  // 0x400 >> 2 = 256
-io_hex0 = data[256];  // 0x400 >> 2 = 256end 
+
+	else begin 
+	  if( addr[10:8] == 3'd000) begin // addr =  0x8__ 
+  	 	case (addr[7:4]) 
+4'b0000: if ( s_type == 2'b10 ) 
+		hex0_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex0_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex0_reg <=  st_data ; 
+4'b0001: if ( s_type == 2'b10 ) 
+		hex1_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex1_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex1_reg <=  st_data ; 
+		
+4'b0010: if ( s_type == 2'b10 ) 
+		hex2_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex2_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex2_reg <=  st_data ; 
+		
+4'b0011:  if ( s_type == 2'b10 ) 
+		hex3_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex3_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex3_reg <=  st_data ; 
+		
+4'b0100: if ( s_type == 2'b10 ) 
+		hex4_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex4_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex4_reg <=  st_data ; 
+		
+4'b0101: if ( s_type == 2'b10 ) 
+		hex5_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex5_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex5_reg <=  st_data ; 
+		
+4'b0110:  if ( s_type == 2'b10 ) 
+		hex6_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex6_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex6_reg <=  st_data ; 
+		
+4'b0111: if ( s_type == 2'b10 ) 
+		hex7_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		hex7_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		hex7_reg <=  st_data ; 
+		
+4'h8 :  if ( s_type == 2'b10 ) 
+		ledr_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		ledr_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		ledr_reg <=  st_data ; 
+		
+4'h9 : if ( s_type == 2'b10 ) 
+		ledg_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		ledg_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		ledg_reg <=  st_data ; 
+		
+4'hA :  if ( s_type == 2'b10 )  
+		lcd_reg[7:0] <=  st_data [7:0] ;
+	 	else if ( s_type == 2'b01 ) 
+		lcd_reg[15:0] <=  st_data [15:0] ; 
+		 else 
+		lcd_reg <=  st_data ; 
+		default:trash <= st_data; 
+  		endcase
+	  end 
+	end //end for else begin 
+end // end for if (st_en)
+end // end for always_ff
 end
+    always_comb begin
+      // Read data from memory
+if ( addr == 12'h900 ) 
+ld_data = sw_reg; 
+else if (addr[11] == 1'd0 ) // meaning address lower x800 => data memory
+ld_data = mem[addr[10:2]]; 
+else begin
+   case (addr[7:4]) 
+4'b0000:ld_data =  hex0_reg ;
+4'b0001:ld_data =  hex1_reg;
+4'b0010:ld_data =  hex2_reg;
+4'b0011:ld_data =  hex3_reg;
+4'b0100:ld_data =  hex4_reg;
+4'b0101:ld_data =  hex5_reg ; 
+4'b0110:ld_data =  hex6_reg ;
+4'b0111:ld_data =  hex7_reg ;
+4'h8 :ld_data =  ledr_reg ;
+4'h9 :ld_data =  ledg_reg ;
+4'hA :ld_data =  lcd_reg ;
+default: ld_data = 32'd0; 
+   endcase
+end
+				
+   io_lcd = lcd_reg ; 
+   io_ledg = ledg_reg;  
+   io_ledr = ledr_reg;
+   io_hex7 = hex7_reg;
+   io_hex6 = hex6_reg; 
+   io_hex5 = hex5_reg ;
+   io_hex4 = hex4_reg; 
+   io_hex3 = hex3_reg; 
+   io_hex2 =hex2_reg;
+   io_hex1 =hex1_reg ;
+   io_hex0 =hex0_reg ; 
+
+  end
 endmodule
