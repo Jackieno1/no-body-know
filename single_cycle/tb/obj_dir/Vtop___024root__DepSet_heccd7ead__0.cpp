@@ -3942,11 +3942,9 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                                                      ((0x1fU 
                                                        >= vlSelf->top__DOT__singleCycle__DOT__outmux)
                                                        ? 
-                                                      VL_SHIFTRS_III(32,32,32, vlSelf->top__DOT__singleCycle__DOT__outmux_branch, vlSelf->top__DOT__singleCycle__DOT__outmux)
-                                                       : 
-                                                      (- 
-                                                       (vlSelf->top__DOT__singleCycle__DOT__outmux_branch 
-                                                        >> 0x1fU)))
+                                                      (vlSelf->top__DOT__singleCycle__DOT__outmux_branch 
+                                                       >> vlSelf->top__DOT__singleCycle__DOT__outmux)
+                                                       : 0U)
                                                       : 
                                                      ((0x1fU 
                                                        >= vlSelf->top__DOT__singleCycle__DOT__outmux)

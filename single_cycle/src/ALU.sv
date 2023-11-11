@@ -1,5 +1,3 @@
-`include "../src/compare32bit.sv"
-`include "../src/compare32bit_signed.sv"
 module ALU #(parameter Width= 32)(
 	// input
 	input logic [Width - 1:0] DataA, // take from mux 2 
@@ -41,7 +39,7 @@ always_comb begin
  			end
  	4'b0101: alu_o = DataA ^ DataB; 			// xor
  	4'b0110: alu_o = DataA >> DataB;			// srl
- 	4'b0111: alu_o = $signed(DataA) >>> DataB; 	// sra
+ 	4'b0111: alu_o = DataA >>> DataB; 			// sra
   	4'b1000: alu_o = DataA | DataB; 			// or
   	4'b1001: alu_o = DataA & DataB; 			// and
   	4'b1010: alu_o = DataB; 					// lui (no operation)

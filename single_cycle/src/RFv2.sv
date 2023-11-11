@@ -1,6 +1,3 @@
-`include "../src/Reg.sv"
-`include "../src/Decoder.sv"
-`include "../src/mux32to1.sv"
 module RFv2 #(parameter Width=32)(
     input  logic clk_i,rst_ni,
     input  logic RegWEn,

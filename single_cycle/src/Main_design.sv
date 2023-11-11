@@ -1,15 +1,3 @@
-`include "../src/PC.sv"
-`include "../src/Add.sv"
-`include "../src/RFv2.sv"
-`include "../src/ALU.sv"
-`include "../src/Main_controller.sv"
-`include "../src/ALU_Controller.sv"
-`include "../src/ImmGen.sv"
-`include "../src/mux2to1.sv"
-`include "../src/Branch_Comp.sv"
-`include "../src/mux3to1.sv"
-`include "../src/inst_memory.sv"
-`include "../src/LSU.sv"
 module Main_design #(parameter Width=32)(
 	//input
 	input logic [Width-1:0]io_sw_i,
@@ -52,7 +40,7 @@ mux2to1     s8 (DataA,pc,ASel,outmux_branch);   // choose rs1 for jalr or pc for
 mux2to1     s9  (DataB,Imm,BSel,outmux);	    // choose imm value or value in registers
 ALU         s10 (outmux_branch,outmux,ALUSel,alu);
 //--------------MEM------------
-LSU         s11  (alu[11:0],DataB,io_sw_i,{SB,SH},ld_data,io_lcd_o,
+LSU         s11 (alu[11:0],DataB,io_sw_i,{SB,SH},ld_data,io_lcd_o,
 												  	io_ledg_o,
 												  	io_ledr_o,
 												  	io_hex0_o,
