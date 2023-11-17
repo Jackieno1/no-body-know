@@ -1,9 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <cstdlib>
+#include <string>
+#include <iostream>
+#include <verilated.h>
+#include <verilated_fst_c.h>
+#include "Vtop.h"
 
- #define number_32_bit 4294967296
-int pc_temp, pc_jump,temp, temp_o;
-int test_slti = -2048;
+#define MAX_SIM       1000000
+vluint64_t sim_unit = 0;
+vluint64_t sim_time = 0;
 
-void drv_in(Vtop *dut, vluint64_t sim_unit) {
+char string[50];
+struct timeval time_dia;
+struct timeval time_lcd;
+struct timeval time_gcd;
+struct timeval time_str;
+struct timeval time_twr;
+struct timeval time_bin;
+struct timeval time_fib;
+struct timeval time_fac;
+float seconds;
+double run_time;
+int  clc_str = 0;
+int  clc_dia = 0;
+int  clc_lcd = 0;
+int  clc_gcd = 0;
+int  clc_twr = 0;
+int  clc_bin = 0;
+int  clc_fib = 0;
+int  clc_fac = 0;
+int  flg_dia = 1;
+int  flg_lcd = 1;
+int  flg_gcd = 1;
+int  flg_twr = 1;
+int  flg_bin = 1;
+int  flg_fib = 1;
+int  flg_fac = 1;
+
+void monitor_cycle (Vtop *dut, VerilatedFstC *vtrace);
+void dut_clock(Vtop *dut, VerilatedFstC *vtrace);
+void set_diagnosis(Vtop *dut);
+void get_expected(Vtop *dut);
+void monitor_proc(Vtop *dut);
+void monitor_outputs(Vtop *dut, VerilatedFstC *vtrace);
+
+void print_passed (char *string) {
+  printf("::\033[1;32mPASSED\033[0m:: %s\n", string);
+}
+
+void print_failed (char *string) {
+  printf("::\033[1;31mFAILED\033[0m:: %s\n", string);
+}
+
+void exit_fail (Vtop *dut, VerilatedFstC *vtrace) {
+  printf("\033[1;31m::ERROR::\033[0m These instructions are NOT working properly!\n");
+  printf("\033[1;31m::ERROR::\033[0m Please rework on those or check your I/O connections\n");
+  printf("\n---------------------END OF FILE---------------------\n");
+  printf("\033[1;31mTerminating...\033[0m\n");
+  vtrace->close();
+  delete dut;
+  exit(EXIT_FAILURE);
+}
+
+void exit_pass (Vtop *dut, VerilatedFstC *vtrace) {
+  printf("\nEstimated run time on FPGA:\n");
+  printf("  (1) Clock 27 MHz: %10.3f ms\n", (double) sim_unit/27000.0);
+  printf("  (2) Clock 50 MHz: %10.3f ms\n", (double) sim_unit/50000.0);
+  printf("\n---------------------END OF FILE---------------------\n");
+  vtrace->close();
+  delete dut;
+  exit(EXIT_SUCCESS);
+}
+
+
+float get_seconds (struct timeval end, struct timeval start){
+  long long milisecs;
+  milisecs = (end.tv_sec - start.tv_sec)*1000 + (end.tv_usec - start.tv_usec)/1000.0;
+  return (float) milisecs/1000.0;
+}
+
+void initial(Vtop *dut) {
+}
+
+void set_reset(Vtop *dut) {
   if (sim_unit < 2) {
     dut->rst_ni = 0;
     dut->eval();
@@ -12,368 +95,181 @@ void drv_in(Vtop *dut, vluint64_t sim_unit) {
     dut->rst_ni = 1;
     dut->eval();
   }
+}
 
-  if (sim_unit == 20) {
- 	temp = rand()%number_32_bit;
- 
-  	}
-  if (sim_unit == 50){
- 	temp = rand()%number_32_bit;
+void dut_clock(Vtop *dut, VerilatedFstC *vtrace) {
+  sim_time = sim_unit * 10 + 1;
+  if (vtrace)
+    vtrace->dump(sim_time); // Dump values to update inputs
+
+  sim_time = sim_time + 4;
+  dut->clk_i = 0;
+  dut->eval();
+  if (vtrace)
+    vtrace->dump(sim_time); // Dump values after negedge
+
+  sim_time = sim_time + 5;
+  dut->clk_i = 1;
+  dut->eval();
+  if (vtrace) {
+    vtrace->dump(sim_time); // Dump values after posedge
+    //vtrace->flush();
   }
-  if (sim_unit == 75){
-  	temp = rand()%number_32_bit;
-  }
-  if (sim_unit == 110){
-  	temp = rand()%number_32_bit;
-  }
-    dut->io_sw_i = temp;
+}
+
+void set_diagnosis(Vtop *dut) {
+  if (sim_unit < 25) {
+    dut->io_sw_i = 0xA203B3EE;
     dut->eval();
- 
-}
- 
-
-void pass () {
-  printf("\033[1;32mCORRECT\033[0m \n");
-}
-
-void fail () {
-  printf("\033[1;31mINCORRECT\033[0m \n");
-}
-void pass_1 (bool abc ) {
-	if (abc == 1) {
-		pass();
-	}
-	else {
-		fail();
-	}
+  }
+  if (sim_unit >= 29) {
+    dut->io_sw_i = 0x5B6123F9;
+    dut->eval();
+  }
 }
 
+void get_expected(Vtop *dut) {
+}
 
-void tb_code(Vtop *dut, VerilatedFstC *vtrace, vluint64_t sim_unit,char string[50]) {
+void monitor_proc_diagnosis(Vtop *dut) {
+}
 
+void monitor_cycle (Vtop *dut, VerilatedFstC *vtrace) {
 
+  if (dut->io_ledg_o == 0x1 && flg_dia) {
+    clc_dia  = sim_unit;
+    flg_dia  = 0;
+    gettimeofday (&time_dia, NULL);
+    seconds = get_seconds(time_dia, time_str);
+    printf("\n-=- TESTBENCHES -=-\n");
+    printf("  # .Status..      Name      ..  Cycles  ..  Sim-Time \n");
+    printf("::0::");
+    printf("\033[1;32mPASSED\033[0m");
+    printf(":: Diagnosis      :: %8d :: %7.3f s\n", clc_dia, seconds);
+  }
 
-  if (sim_unit == 47) {
-	printf("Test 1: LW/SW, LUI, LB, LH, LBU, LHU, SB, SH\n\n");
-	printf("io_sw_i = %x\n\n", dut->io_sw_i);
-    printf("%-25s%-20s%-20s%-20s\n", "Instruction check", "Expect result", "Test Result", "Conclusion"); 
-    
-    if (dut->io_hex0_o == temp) {
-	printf("%-25s%-20x%-20x%-20s\n", "LW/SW ",dut->io_sw_i, dut->io_hex0_o,"\033[1;32mCORRECT\033[0m");
+  if (dut->io_ledg_o == 0x3 && flg_lcd ) {
+    clc_lcd  = sim_unit;
+    flg_lcd  = 0;
+    gettimeofday (&time_lcd, NULL);
+    seconds = get_seconds(time_lcd, time_dia);
+  }
+
+  if (dut->io_ledg_o == 0x7 && flg_fib ) {
+    clc_fib  = sim_unit;
+    flg_fib  = 0;
+    gettimeofday (&time_fib, NULL);
+    seconds = get_seconds(time_fib, time_lcd);
+    printf("::1::");
+    if (dut->io_ledr_o == 0x610) {
+      printf("\033[1;32mPASSED\033[0m");
     }
     else {
-    printf("%-25s%-20x%-20x%-20s\n", "LW/SW ",dut->io_sw_i, dut->io_hex0_o,"\033[1;31mINCORRECT\033[0m");
+      printf("\033[1;31mFAILED\033[0m");
     }
-    // DONE LH
-    
-    int test_lui = 0x872 << 12;
-	if (dut->io_hex1_o == test_lui) {
-	printf("%-25s%-20x%-20x%-20s\n", "LUI ",test_lui, dut->io_hex1_o,"\033[1;32mCORRECT\033[0m");
-	}
-	else {
-	printf("%-25s%-20x%-20x%-20s\n", "LUI ",test_lui, dut->io_hex1_o,"\033[1;31mINCORRECT\033[0m)");
-	}
-	//DONE LUI
-	
-	int lb_check = ((dut->io_sw_i & 0x00000080) == 0x00000080)?
-				   ((dut->io_sw_i & 0x000000ff) + 0xffffff00):
-					(dut->io_sw_i & 0x000000ff);
-	if (dut->io_hex2_o == lb_check) {
-	printf("%-25s%-20x%-20x%-20s\n", "LB ",lb_check, dut->io_hex2_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "LB ",lb_check, dut->io_hex2_o,"\033[1;31mINCORRECT\033[0m)");
-	    }
-	//DONE  LB
-	
-	int lh_check = ((dut->io_sw_i & 0x00008000) == 0x00008000)?
-				   ((dut->io_sw_i & 0x0000ffff) + 0xffff0000):
-				    (dut->io_sw_i & 0x0000ffff);
-	if (dut->io_hex3_o == lh_check) {
-	printf("%-25s%-20x%-20x%-20s\n", "LH ",lh_check, dut->io_hex3_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "LH ",lh_check, dut->io_hex3_o,"\033[1;31mINCORRECT\033[0m)");
-	    }
-	//DONE LH
-	
-	if (dut->io_hex4_o == (dut->io_sw_i & 0x000000FF)) {
-	printf("%-25s%-20x%-20x%-20s\n", "LBU ", (dut->io_sw_i & 0x0000FF), dut->io_hex4_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "LBU ", (dut->io_sw_i & 0x0000FF), dut->io_hex4_o,"\033[1;31mINCORRECT\033[0m)");
-	    }
-	//DONE LBU
-	
-	if (dut->io_hex5_o == (dut->io_sw_i & 0x0000FFFF)) {
-	printf("%-25s%-20x%-20x%-20s\n", "LHU ", (dut->io_sw_i & 0x0000FFFF), dut->io_hex5_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "LHU ",  (dut->io_sw_i & 0x0000FFFF), dut->io_hex5_o,"\033[1;31mINCORRECT\033[0m)");
-	    }    
-	//DONE LHU
-	
-	if (dut->io_hex6_o == (dut->io_sw_i & 0xFF)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SB ",(dut->io_sw_i & 0x00000000FF), dut->io_hex6_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "SB ",(dut->io_sw_i & 0x00000000FF), dut->io_hex6_o,"\033[1;31mINCORRECT\033[0m)");
-	    }    
-	//DONE SB
-	
-	if (dut->io_hex7_o == (dut->io_sw_i & 0x0000FFFF)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SH ",(dut->io_sw_i & 0x0000FFFF), dut->io_hex7_o,"\033[1;32mCORRECT\033[0m");
-	    }
-	    else {
-	printf("%-25s%-20x%-20x%-20s\n", "SH ",(dut->io_sw_i & 0x0000FFFF), dut->io_hex7_o,"\033[1;31mINCORRECT\033[0m)");
-	    }    
-	//DONE SH
-	printf("\n===================================================\n\n");
-	}
-	
-	if (sim_unit == 70) {
-	printf("Test 2: ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI\n\n");
-	printf("io_sw_i = %x\n\n", dut->io_sw_i);
-    printf("%-25s%-20s%-20s%-20s\n", "Instruction check", "Expect result", "Test Result", "Conclusion");
+    printf(":: Fibonacci      :: %8d :: %7.3f s\n", clc_fib - clc_lcd, seconds);
+  }
 
-	// ADDI
-    
-	if (dut->io_hex0_o == (dut->io_sw_i + 2047 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "ADDI ",(dut->io_sw_i + 2047 ), dut->io_hex0_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "ADDI ",(dut->io_sw_i + 2047 ), dut->io_hex0_o,"\033[1;31mINCORRECT\033[0m)");
-		}   
+  if (dut->io_ledg_o == 0xF && flg_fac ) {
+    clc_fac  = sim_unit;
+    flg_fac  = 0;
+    gettimeofday (&time_fac, NULL);
+    seconds = get_seconds(time_fac, time_fib);
+    printf("::2::");
+    if (dut->io_ledr_o == 0x40320) {
+      printf("\033[1;32mPASSED\033[0m");
+    }
+    else {
+      printf("\033[1;31mFAILED\033[0m");
+    }
+    printf(":: Factorial      :: %8d :: %7.3f s\n", clc_fac - clc_fib, seconds);
+  }
 
-	// SLTI
-		
-	signed int test_SLTI = 0xfffff800;
-	if (dut->io_hex1_o == (signed(dut->io_sw_i) < signed(test_SLTI) ) ? 1 : 0) {
-	printf("%-25s%-20x%-20x%-20s\n", "ADDI ",((signed(dut->io_sw_i) < signed(test_SLTI) ) ? 1 : 0 ), dut->io_hex1_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "ADDI ",((signed(dut->io_sw_i) < signed(test_SLTI) ) ? 1 : 0 ), dut->io_hex1_o,"\033[1;31mINCORRECT\033[0m)");
-		}   
+  if (dut->io_ledg_o == 0x1F && flg_gcd ) {
+    clc_gcd  = sim_unit;
+    flg_gcd  = 0;
+    gettimeofday (&time_gcd, NULL);
+    seconds = get_seconds(time_gcd, time_fac);
+    printf("::3::");
+    if (dut->io_ledr_o == 0x1556) {
+      printf("\033[1;32mPASSED\033[0m");
+    }
+    else {
+      printf("\033[1;31mFAILED\033[0m");
+    }
+    printf(":: GCD            :: %8d :: %7.3f s\n", clc_gcd - clc_fac, seconds);
+  }
 
-	// SLTIU
-	
-	unsigned int test_SLTIU_io_sw = dut->io_sw_i; 
-	unsigned int test_SLTIU_imme = 0xfffff800;
-	if (dut->io_hex2_o == (test_SLTIU_io_sw <test_SLTIU_imme) ? 1 : 0) {
-	printf("%-25s%-20x%-20x%-20s\n", "SLTIU ",(test_SLTIU_io_sw <test_SLTIU_imme) ? 1 : 0, dut->io_hex2_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SLTIU ",(test_SLTIU_io_sw <test_SLTIU_imme) ? 1 : 0, dut->io_hex2_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
+  if (dut->io_ledg_o == 0x3F && flg_twr ) {
+    clc_twr  = sim_unit;
+    flg_twr  = 0;
+    gettimeofday (&time_twr, NULL);
+    seconds = get_seconds(time_twr, time_gcd);
+    printf("::4::");
+    if (dut->io_ledr_o == 0x1023) {
+      printf("\033[1;32mPASSED\033[0m");
+    }
+    else {
+      printf("\033[1;31mFAILED\033[0m");
+    }
+    printf(":: Tower of Hanoi :: %8d :: %7.3f s\n", clc_twr - clc_gcd, seconds);
+  }
 
-	// XORI
+  if (dut->io_ledg_o == 0x7F && flg_bin ) {
+    clc_bin  = sim_unit;
+    flg_bin  = 0;
+    gettimeofday (&time_bin, NULL);
+    seconds = get_seconds(time_bin, time_twr);
+    printf("::5::");
+    if (dut->io_ledr_o == 0x10) {
+      printf("\033[1;32mPASSED\033[0m");
+    }
+    else {
+      printf("\033[1;31mFAILED\033[0m");
+    }
+    printf(":: Binary Search  :: %8d :: %7.3f s\n", clc_bin - clc_twr, seconds);
+    exit_pass(dut, vtrace);
+  }
+}
 
-	if (dut->io_hex3_o == (dut->io_sw_i ^ 1639 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "XORI ",(dut->io_sw_i ^ 1639 ), dut->io_hex3_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "XORI ",(dut->io_sw_i ^ 1639 ), dut->io_hex3_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
 
-	// ORI
-		
+int main(int argc, char **argv, char **env) {
+	// Call commandArgs first!
+	Verilated::commandArgs(argc, argv);
 
-	if (dut->io_hex4_o == (dut->io_sw_i | 1639 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "ORI ",(dut->io_sw_i | 1639), dut->io_hex4_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "ORI ",(dut->io_sw_i | 1639 ), dut->io_hex4_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
+  // Instantiate the design
+	Vtop *dut = new Vtop;
 
-	// ANDI
-		
+  // Trace generating
+  Verilated::traceEverOn(true);
+  VerilatedFstC *vtrace = new VerilatedFstC;
+  dut->trace(vtrace, 2); // trace down to 2 hierarchy
+  vtrace->open("wave.fst");
+  vtrace->dump(0);
 
-	if (dut->io_hex5_o == (dut->io_sw_i & 1639 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "ANDI ",(dut->io_sw_i & 1639 ), dut->io_hex5_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "ANDI ",(dut->io_sw_i & 1639 ), dut->io_hex5_o,"\033[1;31mINCORRECT\033[0m)");
-		} 
+  // Initial setups
+  srand(time(NULL));
+  initial(dut);
+  dut->eval();
 
-	//  SLLI
-	   
+  printf("\n\n---------------------REPORT FILE---------------------\n\n");
 
-	if (dut->io_hex6_o == (dut->io_sw_i << 4 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "SLLI ",(dut->io_sw_i << 4 ), dut->io_hex6_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SLLI ",(dut->io_sw_i << 4 ), dut->io_hex6_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
+  gettimeofday (&time_str, NULL);
 
-	//  SRLI
-		
-	if (dut->io_hex7_o == (dut->io_sw_i >> 4 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "SRLI ",(dut->io_sw_i >> 4 ),dut->io_hex7_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SRLI ",(dut->io_sw_i >> 4 ),dut->io_hex7_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
-
-	// SRAI
-																		
-
-	if (dut->io_ledr_o == (dut->io_sw_i >> 4 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "SRAI ",(dut->io_sw_i >> 4 ),dut->io_ledr_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SRAI ",(dut->io_sw_i >> 4 ),dut->io_ledr_o,"\033[1;31mINCORRECT\033[0m)");
-		}    
-		printf("\n===================================================\n\n");																
+  // Check procedure
+  //while (sim_unit){
+  while (sim_unit<10000){
+    set_reset(dut);
+    dut_clock(dut, vtrace);
+    set_diagnosis(dut);
+   // dut->eval();
+   // monitor_proc_diagnosis(dut);
+   // get_expected(dut);
+    monitor_cycle(dut, vtrace);
+    sim_unit++;
 	}
 
-	
-	if (sim_unit == 103) {
-	printf("Test 3: ADD, SUB,  SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND\n\n");
-	printf("io_sw_i = %x\n\n", dut->io_sw_i);
-    printf("%-25s%-20s%-20s%-20s\n", "Instruction check", "Expect result", "Test Result", "Conclusion");
-
-	// ADD
-    
-	if (dut->io_hex0_o == (dut->io_sw_i + 1428 )) {
-	printf("%-25s%-20x%-20x%-20s\n", "ADD ",(dut->io_sw_i + 1428 ),dut->io_hex0_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "ADD ",(dut->io_sw_i + 1428 ),dut->io_hex0_o,"\033[1;31mINCORRECT\033[0m)");
-		}    	
-
-	// SUB
-		
-
-	if (dut->io_hex1_o == 1428 - (dut->io_sw_i)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SUB ",(1428 - dut->io_sw_i),dut->io_hex1_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SUB ",(1428 - dut->io_sw_i),dut->io_hex1_o,"\033[1;31mINCORRECT\033[0m)");
-		}    	
-
-	// SLL 
-		
-	if (dut->io_hex2_o == (dut->io_sw_i <<  4)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SLL ",(dut->io_sw_i <<  4),dut->io_hex2_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SLL ",(dut->io_sw_i <<  4),dut->io_hex2_o,"\033[1;31mINCORRECT\033[0m)");
-		} 		
-
-	// SLT
-	
-	if (dut->io_hex3_o == ((signed(dut->io_sw_i) < signed(0xfffff800) ) ? 1 : 0)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SLT", ( signed(dut->io_sw_i) < signed(0xfffff800) ) ? 1 : 0,dut->io_hex3_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SLT", ( signed(dut->io_sw_i) < signed(0xfffff800) ) ? 1 : 0,dut->io_hex3_o,"\033[1;31mINCORRECT\033[0m)");
-		}
-
-	//SLTU
-		
-	if (dut->io_hex4_o == (( unsigned(dut->io_sw_i) < unsigned(0xfffff800) ) ? 1 : 0)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SLTU ", (unsigned(dut->io_sw_i) < unsigned(0xfffff800) ) ? 1 : 0,dut->io_hex4_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SLTU ", (unsigned(dut->io_sw_i) < unsigned(0xfffff800) ) ? 1 : 0,dut->io_hex4_o,"\033[1;31mINCORRECT\033[0m)");
-		}
-
-	// XOR
-		
-	if (dut->io_hex5_o == (dut->io_sw_i ^ 4)) {
-	printf("%-25s%-20x%-20x%-20s\n", "XOR ",(dut->io_sw_i ^ 4 ),dut->io_hex5_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "XOR ",(dut->io_sw_i ^ 4 ),dut->io_hex5_o,"\033[1;31mINCORRECT\033[0m)");
-		}
-
-	// SRL
-		
-	unsigned int test_SRL;
-	test_SRL = dut->io_sw_i>>4;
-	if (dut->io_hex6_o == (test_SRL)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SRL ",(test_SRL ),dut->io_hex6_o,"\033[1;32mCORRECT\033[0m");	
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SRL ",(test_SRL ),dut->io_hex6_o,"\033[1;31mINCORRECT\033[0m)");
-		}
-
-	// SRA
-		
-	if (dut->io_hex7_o == (dut->io_sw_i >> 4)) {
-	printf("%-25s%-20x%-20x%-20s\n", "SRA ",(dut->io_sw_i >> 4 ),dut->io_hex7_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "SRA ",(dut->io_sw_i >> 4 ),dut->io_hex7_o,"\033[1;31mINCORRECT\033[0m)");
-		}	
-
-	// OR
-
-	if (dut->io_ledr_o == (dut->io_sw_i |  1953)) {
-	printf("%-25s%-20x%-20x%-20s\n", "OR ", (dut->io_sw_i |  1953 ),dut->io_ledr_o,"\033[1;32mCORRECT\033[0m");		
-	}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "OR ",(dut->io_sw_i |  1953 ),dut->io_ledr_o,"\033[1;31mINCORRECT\033[0m)");		
-	}
-
-	// AND
-	
-	if (dut->io_ledg_o == (dut->io_sw_i & 1953)) {
-	printf("%-25s%-20x%-20x%-20s\n", "AND ", ( (dut->io_sw_i) & (1953) ),dut->io_ledg_o,"\033[1;32mCORRECT\033[0m");
-		}
-		else {
-	printf("%-25s%-20x%-20x%-20s\n", "AND ", ( (dut->io_sw_i) & (1953) ),dut->io_ledg_o,"\033[1;31mINCORRECT\033[0m)");
-		}
-		printf("\n===================================================\n\n");
-	}
-
-
-	
- 	if (sim_unit == 101){
-		pc_temp = dut->pc_debug_o;
-	}
-
-	if (sim_unit == 138){
-		bool tbr1 = (dut->io_hex0_o == (dut->io_sw_i!=0xFFFFF000));
-		bool tbr2 = (dut->io_hex1_o == (0xFFFFF000 == dut->io_sw_i));
-		bool tbr3 = (dut->io_hex2_o == (signed(0xFFFFF000) < signed(dut->io_sw_i)));
-		bool tbr4 = (dut->io_hex3_o == (signed(0xFFFFF000) >= signed(dut->io_sw_i)));
-		bool tbr5 = (dut->io_hex4_o == (unsigned(0xFFFFF000) < unsigned(dut->io_sw_i)));
-		bool tbr6 = (dut->io_hex5_o == (unsigned(0xFFFFF000) >= unsigned(dut->io_sw_i)));
-		printf("Test 4 BRANCHING instruction \n");
-		printf("Number Rs1 %#0x\n", 0xFFFFF000);
-		printf("Number Rs2 %#0x\n", dut->io_sw_i);
-		printf("Number IO: %#0x\n", dut->io_hex0_o);
-		std::cout << " BNE check:  "; pass_1(tbr1);
-		std::cout << " BEQ check:  "; pass_1(tbr2);
-		std::cout << " BLT check:  "; pass_1(tbr3);
-		std::cout << " BGE check:  "; pass_1(tbr4);
-		std::cout << " BLTU check: "; pass_1(tbr5);		
-		std::cout << " BGEU check: "; pass_1(tbr6);
-		printf("\n===================================================\n\n");
-	}
-	if (sim_unit == 143){
-		printf("Test 5: JAL, AUIPC, JALR \n");
-		printf("JAL check: ");
-		pass_1(dut->io_hex0_o);
-	
-		temp_o = dut->pc_debug_o;
-		printf("temp = %#0x\n", temp_o);
-	}
-	if (sim_unit == 149){
-		printf("io_hex1_o = %#0x\n",dut->io_hex1_o );
-		printf("AUIPC check: ");
-		pass_1 (dut->io_hex1_o == (temp_o + 0x04000));		
-	}
-	if (sim_unit == 149){
-		temp_o = dut->pc_debug_o;
-		printf("temp = %#0x\n", temp_o);
-	}
-	if (sim_unit == 155){
-		printf("io_hex2_o = %#0x\n", dut->io_hex2_o);
-		printf("JALR check: ");
-		pass_1(temp_o == dut->io_hex2_o);
-		printf("\n===================================================\n\n");
-	}
-	
+  vtrace->close();
+  delete dut;
+  exit(EXIT_SUCCESS);
 }

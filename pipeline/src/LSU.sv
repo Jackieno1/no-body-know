@@ -28,7 +28,7 @@ logic [Width-1:0] hex0_reg,hex1_reg,hex2_reg,hex3_reg,
 // Input Peripheral Regiser 
 logic [Width-1:0] sw_reg ;
 
-always_ff @(posedge clk_i) begin 
+always_ff @(negedge clk_i) begin 
 if (~rst_ni) begin 
  mem  <= '{512{32'h0}}; 
 sw_reg <= 32'd0;
