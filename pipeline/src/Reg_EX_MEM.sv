@@ -6,14 +6,14 @@ module Reg_EX_MEM #(parameter Width=32)(
 	input logic [1:0]WBSel_EX,//WB flags
 	input logic st_en_EX,SB_EX,SH_EX, // Mem flag
 
-	input logic [Width-1:0] pc_EX,alu,DataB_EX,inst_EX,
+	input logic [Width-1:0] pc_EX,alu,inst_EX,outmux_fb,
 	//outputs	
 
 	output logic RegWEn_MEM,
 	output logic [1:0]WBSel_MEM,
 	output logic st_en_MEM,SB_MEM,SH_MEM,
 
-	output logic [Width-1:0] pc_MEM,alu_MEM,DataB_MEM,inst_MEM
+	output logic [Width-1:0] pc_MEM,alu_MEM,inst_MEM,outmux_fb_MEM
 );
 always_ff @(posedge clk_i) begin
 	if(~rst_ni) begin
@@ -24,8 +24,9 @@ always_ff @(posedge clk_i) begin
 		SH_MEM	  <= 1'b0;
 		pc_MEM 	  <= {Width{1'b0}};
 		alu_MEM   <= {Width{1'b0}};
-		DataB_MEM <= {Width{1'b0}};
+//		outmux_MEM <= {Width{1'b0}};
 		inst_MEM  <= {Width{1'b0}};
+		outmux_fb_MEM  <= {Width{1'b0}};
 	end else begin
 		RegWEn_MEM<= RegWEn_EX;
 		WBSel_MEM <= WBSel_EX;
@@ -34,8 +35,9 @@ always_ff @(posedge clk_i) begin
 		SH_MEM	  <= SH_EX;
 		pc_MEM 	  <= pc_EX;
 		alu_MEM   <= alu;
-		DataB_MEM <= DataB_EX;
+//		outmux_MEM <= outmux;
 		inst_MEM  <= inst_EX;
+		outmux_fb_MEM  <= outmux_fb;		
 	end
 end
 endmodule: Reg_EX_MEM

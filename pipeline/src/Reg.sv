@@ -3,7 +3,7 @@ module Reg #(parameter Width = 32)(
 	output logic [Width-1:0] Data_out,
 	input logic clk_i,rst_ni,write_en
 );
-always_ff @(posedge clk_i) begin
+always_ff @(negedge clk_i) begin
 	if(~rst_ni)
 		Data_out <= '0;
 	else if (write_en)

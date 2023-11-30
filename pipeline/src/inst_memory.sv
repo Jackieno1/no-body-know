@@ -7,7 +7,17 @@ logic [1:0] trash;
   /* verilator lint_on UNUSED */
 logic [31:0] imem [0:2047];
 initial begin
-  $readmemh("../mem/mem.txt", imem);
+ $readmemh("../mem/mem.txt", imem);
+/* imem[0] = 32'h00300193;
+ imem[1] = 32'h00500213;
+ imem[2] = 32'h00600293;
+ imem[3] = 32'h00520433;
+ imem[4] = 32'h02802723;
+ imem[5] = 32'h0282a383;
+ imem[6] = 32'h0033f433;
+ imem[7] = 32'h00736133;
+ imem[8] = 32'h402381b3;
+*/ 
 end
 always_comb begin : proc_data
     data_o = imem[addr_i[12:2]]; // value of address divide 4 byte-address, become value slot memory

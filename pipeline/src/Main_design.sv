@@ -25,16 +25,17 @@ logic [Width-31:0] WBSel;
 logic [Width-29:0] ALUSel;
 // Signals for pipeline
 // first stage
-logic [Width-1:0] pc_ID,inst_ID; 
+logic [Width-1:0] pc_ID,inst_ID,target;
+logic stall_PC,flush_IF_ID; 
 // second stage
-logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX; 
-logic [1:0] WBSel_EX;
-logic [3:0] ALUSel_EX;
-logic BrUn_EX,st_en_EX,SB_EX,SH_EX,ASel_EX,BSel_EX,RegWen_EX,PCSel_EX;
+logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb,alu_fix; 
+logic [1:0] WBSel_EX,forwardingA,forwardingB;
+logic [2:0] ALUop_EX;
+logic BrUn_EX,st_en_EX,SB_EX,SH_EX,RegWen_EX,stall_ID;
 // third stage
-logic [Width-1:0]pc_MEM,alu_MEM,DataB_MEM,inst_MEM,pc_MEMp4;
+logic [Width-1:0]pc_MEM,alu_MEM,inst_MEM,pc_MEMp4,outmux_MEM;
 logic [1:0] WBSel_MEM;
-logic st_en_MEM,SB_MEM,SH_MEM,RegWen_MEM;
+logic st_en_MEM,SB_MEM,SH_MEM,RegWen_MEM,flush_ID_EX,ASel_EX,BSel_EX,PCSel_EX;
 // fourth stage
 logic RegWen_WB;
 /* verilator lint_off UNUSED */
@@ -42,39 +43,41 @@ logic [Width-1:0] pc_WBp4,alu_WB,mem_WB,inst_WB;
 /* verilator lint_on UNUSED */
 logic [1:0] WBSel_WB;
 //--------Datapath------------
-
+fix_alu s23(alu,PCSel_EX,alu_fix);
 //--------------IF------------
-mux2to1     s1 (pc_i,alu,PCSel_EX,outmux_pc);		// choose alu or pc+4
-PC          s2 (clk_i,1'b1,rst_ni,outmux_pc,pc);// count up every posedge clock                                
+mux2to1     s1 (pc_i,alu_fix,PCSel_EX,outmux_pc);		// choose alu or pc+4
+always_taken s22(pc_ID,Imm,outmux_pc,inst_ID[6:0],target);
+PC          s2 (clk_i,stall_PC,rst_ni,target,pc);// count up every posedge clock                                
 Add    	    s3 (pc,pc_i);						// add 4 bit = 1 byte address
 inst_memory s4 (pc[12:0],inst);					// instruction out		
 //----------Reg IF/ID --------   
-Reg_IF_ID   s13 (clk_i,rst_ni,pc,inst,pc_ID,inst_ID);     
+Reg_IF_ID   s13 (clk_i,rst_ni,stall_ID,flush_IF_ID,pc,inst,pc_ID,inst_ID);     
                      
 //--------------ID------------										    
 ImmGen      s5  (inst_ID,ImmSel,Imm);												    
 RFv2        s6  (clk_i,rst_ni,RegWen_WB,inst_ID[19:15],inst_ID[24:20],
 			     inst_WB[11:7],WB,LB, LH, LBU, LHU,ra_signal,DataA,DataB);
 //----------Reg ID/EX --------
-Reg_ID_EX   s14 (clk_i,rst_ni,RegWen,WBSel,st_en,SB,SH,
-				 PCSel,ASel,BSel,BrUn,ALUSel,
+Reg_ID_EX   s14 (clk_i,rst_ni,flush_ID_EX,RegWen,WBSel,st_en,SB,SH,
+				 BrUn,ASel,BSel,PCSel,ALUop,
 				 pc_ID,DataA,DataB,Imm,inst_ID,
-				 PCSel_EX,RegWen_EX,st_en_EX,SB_EX,SH_EX,ASel_EX,BSel_EX,
-				 BrUn_EX,ALUSel_EX,
-				 WBSel_EX,pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX);
+				 RegWen_EX,st_en_EX,SB_EX,SH_EX,
+				 BrUn_EX,ASel_EX,BSel_EX,PCSel_EX,
+				 WBSel_EX,ALUop_EX,pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX);
 				 
 //--------------EX------------
 Branch_Comp s7  (DataA_EX,DataB_EX,BrUn_EX,BrLt,BrEq);
-mux2to1     s8  (DataA_EX,pc_EX,ASel_EX,outmux_branch);   // choose rs1 for jalr or pc for jal
-mux2to1     s9  (DataB_EX,imm_EX,BSel_EX,outmux);	      // choose imm value or value in registers
-ALU         s10 (outmux_branch,outmux,ALUSel_EX,alu);
+mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choose rs1 for jalr or pc for jal
+mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
+mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
+ALU         s10 (outmux_branch,outmux2fb,ALUSel,alu);
 //----------Reg EX/MEM --------
 Reg_EX_MEM  s15 (clk_i,rst_ni,RegWen_EX,WBSel_EX,st_en_EX,SB_EX,SH_EX,
-				 pc_EX,alu,DataB_EX,inst_EX,RegWen_MEM,WBSel_MEM,
-				 st_en_MEM,SB_MEM,SH_MEM,pc_MEM,alu_MEM,DataB_MEM,inst_MEM);
+				 pc_EX,alu,inst_EX,outmux,RegWen_MEM,WBSel_MEM,
+				 st_en_MEM,SB_MEM,SH_MEM,pc_MEM,alu_MEM,inst_MEM,outmux_MEM);
 //--------------MEM------------
 Add			s16 (pc_MEM,pc_MEMp4);
-LSU         s11 (alu_MEM[11:0],DataB_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd_o,
+LSU         s11 (alu_MEM[11:0],outmux_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd_o,
 												  	io_ledg_o,
 												  	io_ledr_o,
 												  	io_hex0_o,
@@ -87,16 +90,22 @@ LSU         s11 (alu_MEM[11:0],DataB_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd_
 												  	io_hex7_o,
 												  	st_en_MEM,
 												  	rst_ni,
-												  	clk_i);
+												  	clk_i
+												  	);
 //----------Reg MEM/WB--------
 Reg_MEM_WB  s17  (clk_i,rst_ni,RegWen_MEM,WBSel_MEM,pc_MEMp4,alu_MEM,ld_data,inst_MEM,
 				  RegWen_WB,WBSel_WB,pc_WBp4,alu_WB,mem_WB,inst_WB);
 //--------------WB------------
-	mux3to1     s12  (mem_WB,alu_WB,pc_WBp4,WBSel_WB,WB);   // choose memory value, alu or pc+4 to write back  
-//Controller
-Main_controller ss(inst[Width-26:0],inst[14:12],BrLt,BrEq,
+mux3to1     s12  (mem_WB,alu_WB,pc_WBp4,WBSel_WB,WB);   // choose memory value, alu or pc+4 to write back  
+//----------Controller--------
+Main_controller ss(inst_ID[Width-26:0],inst_ID[14:12],BrLt,BrEq,
 				   RegWen,BSel,st_en,WBSel,LB, LH,LBU,LHU,
 				   SB, SH,BrUn,PCSel,ASel,ImmSel,ALUop,ra_signal);
-ALU_Controller  sa(ALUop,inst[14:12],inst[30],ALUSel);//receive signal from Main_controller to control ALU
+ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);//receive signal from Main_controller to control ALU
+//----------Hazard forwarding unit--------
+Forwarding 	s20(inst_EX[19:15],inst_EX[24:20],inst_MEM[11:7],inst_WB[11:7],
+				ASel_EX,RegWen_MEM,RegWen_WB,forwardingA,forwardingB);
+Hazard_detection_unit s21(PCSel_EX,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],inst_EX[6:0],
+						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID);
 assign pc_debug_o = pc;
 endmodule: Main_design
