@@ -25,30 +25,36 @@ logic [Width-31:0] WBSel;
 logic [Width-29:0] ALUSel;
 // Signals for pipeline
 // first stage
-logic [Width-1:0] pc_ID,inst_ID,target;
-logic stall_PC,flush_IF_ID; 
+logic [Width-1:0] pc_ID,inst_ID,pc_predicted,outmux_btb;
+logic [3:0] tag;
+logic [1:0] taken;
+logic stall_PC,flush_IF_ID,flag_br,hit,sel_muxpc; 
 // second stage
-logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb,alu_fix; 
+logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb; 
 logic [1:0] WBSel_EX,forwardingA,forwardingB;
 logic [2:0] ALUop_EX;
 logic BrUn_EX,st_en_EX,SB_EX,SH_EX,RegWen_EX,stall_ID;
 // third stage
-logic [Width-1:0]pc_MEM,alu_MEM,inst_MEM,pc_MEMp4,outmux_MEM;
+logic [Width-1:0]pc_MEM,alu_MEM,inst_MEM,pc_MEMp4,outmux_MEM,predicted_target_address;
 logic [1:0] WBSel_MEM;
-logic st_en_MEM,SB_MEM,SH_MEM,RegWen_MEM,flush_ID_EX,ASel_EX,BSel_EX,PCSel_EX;
+logic st_en_MEM,SB_MEM,SH_MEM,RegWen_MEM,flush_ID_EX,ASel_EX,BSel_EX,PCSel_EX,br_comp;
 // fourth stage
 logic RegWen_WB;
 /* verilator lint_off UNUSED */
 logic [Width-1:0] pc_WBp4,alu_WB,mem_WB,inst_WB;
 /* verilator lint_on UNUSED */
 logic [1:0] WBSel_WB;
+assign sel_muxpc = br_comp | (hit & (taken[0] & taken[1]) ) ;
 //--------Datapath------------
-fix_alu s23(alu,PCSel_EX,alu_fix);
+//fix_alu s23 (alu,PCSel_EX,alu_fix);
+BTB     s24 (inst[6:4],br_comp,predicted_target_address,pc_EX[13:0],pc,taken,flag_br,tag,pc_predicted,rst_ni,clk_i);
+hit     s25 (pc[13:10],tag,flag_br,hit);
 //--------------IF------------
-mux2to1     s1 (pc_i,alu_fix,PCSel_EX,outmux_pc);		// choose alu or pc+4
-always_taken s22(pc_ID,Imm,outmux_pc,inst_ID[6:0],target);
-PC          s2 (clk_i,stall_PC,rst_ni,target,pc);// count up every posedge clock                                
-Add    	    s3 (pc,pc_i);						// add 4 bit = 1 byte address
+mux2to1     s26(pc_predicted,predicted_target_address,br_comp,outmux_btb);
+mux2to1     s1 (pc_i,outmux_btb,sel_muxpc,outmux_pc);		// choose alu or pc+4
+//always_taken s22(pc_ID,Imm,outmux_pc,inst_ID[6:0],target);
+PC          s2 (clk_i,stall_PC,rst_ni,outmux_pc,pc);// count up every posedge clock                                
+Add    	    s3 (pc,32'h4,pc_i);						// add 4 bit = 1 byte address
 inst_memory s4 (pc[12:0],inst);					// instruction out		
 //----------Reg IF/ID --------   
 Reg_IF_ID   s13 (clk_i,rst_ni,stall_ID,flush_IF_ID,pc,inst,pc_ID,inst_ID);     
@@ -71,12 +77,13 @@ mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choo
 mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
 mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
 ALU         s10 (outmux_branch,outmux2fb,ALUSel,alu);
+Add			s27 (pc_EX,imm_EX,predicted_target_address);
 //----------Reg EX/MEM --------
 Reg_EX_MEM  s15 (clk_i,rst_ni,RegWen_EX,WBSel_EX,st_en_EX,SB_EX,SH_EX,
 				 pc_EX,alu,inst_EX,outmux,RegWen_MEM,WBSel_MEM,
 				 st_en_MEM,SB_MEM,SH_MEM,pc_MEM,alu_MEM,inst_MEM,outmux_MEM);
 //--------------MEM------------
-Add			s16 (pc_MEM,pc_MEMp4);
+Add			s16 (pc_MEM,32'h4,pc_MEMp4);
 LSU         s11 (alu_MEM[11:0],outmux_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd_o,
 												  	io_ledg_o,
 												  	io_ledr_o,
@@ -105,7 +112,7 @@ ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);//receive signal 
 //----------Hazard forwarding unit--------
 Forwarding 	s20(inst_EX[19:15],inst_EX[24:20],inst_MEM[11:7],inst_WB[11:7],
 				ASel_EX,RegWen_MEM,RegWen_WB,forwardingA,forwardingB);
-Hazard_detection_unit s21(PCSel_EX,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],inst_EX[6:0],
-						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID);
+Hazard_detection_unit s21(PCSel_EX,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],inst_EX[6:0],pc_ID,alu,
+						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp);
 assign pc_debug_o = pc;
 endmodule: Main_design

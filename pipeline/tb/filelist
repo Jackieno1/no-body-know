@@ -23,5 +23,5 @@
 ../src/Forwarding.sv
 ../src/mux4to1.sv
 ../src/Hazard_detection_unit.sv
-../src/always_taken.sv
-../src/fix_alu.sv
+../src/hit.sv
+../src/BTB.sv
