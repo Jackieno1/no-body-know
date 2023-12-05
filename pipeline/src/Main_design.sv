@@ -2,6 +2,7 @@ module Main_design #(parameter Width=32)(
 	//input
 	input logic [Width-1:0]io_sw_i,
 	//output
+	output logic br_comp_o,
 	output logic [Width-1:0]io_lcd_o,
 							io_ledg_o,
 							io_ledr_o,
@@ -18,7 +19,9 @@ module Main_design #(parameter Width=32)(
     // Clock and asynchronous reset active low
 	input logic clk_i,rst_ni);
 //------local decleration-----
-logic RegWen,BSel,st_en,LB, LH, LBU, LHU, SB, SH,PCSel,BrUn,BrLt,BrEq,ASel,ra_signal;
+/* verilator lint_off UNUSED */
+logic RegWen,BSel,st_en,LB, LH, LBU, LHU, SB, SH,PCSel,BrUn,BrLt,BrEq,ASel,ra_signal,test;
+/* verilator lint_on UNUSED */
 logic [Width-1:0] pc_i,pc,DataA,DataB,inst,alu,Imm,outmux,outmux_branch,ld_data,WB,outmux_pc;
 logic [Width-30:0] ALUop,ImmSel;
 logic [Width-31:0] WBSel;
@@ -27,7 +30,7 @@ logic [Width-29:0] ALUSel;
 // first stage
 logic [Width-1:0] pc_ID,inst_ID,pc_predicted,outmux_btb;
 logic [3:0] tag;
-logic [1:0] taken;
+logic  taken;
 logic stall_PC,flush_IF_ID,flag_br,hit,sel_muxpc; 
 // second stage
 logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb; 
@@ -35,7 +38,9 @@ logic [1:0] WBSel_EX,forwardingA,forwardingB;
 logic [2:0] ALUop_EX;
 logic BrUn_EX,st_en_EX,SB_EX,SH_EX,RegWen_EX,stall_ID;
 // third stage
+/* verilator lint_off UNUSED */
 logic [Width-1:0]pc_MEM,alu_MEM,inst_MEM,pc_MEMp4,outmux_MEM,predicted_target_address;
+/* verilator lint_on UNUSED */
 logic [1:0] WBSel_MEM;
 logic st_en_MEM,SB_MEM,SH_MEM,RegWen_MEM,flush_ID_EX,ASel_EX,BSel_EX,PCSel_EX,br_comp;
 // fourth stage
@@ -44,13 +49,15 @@ logic RegWen_WB;
 logic [Width-1:0] pc_WBp4,alu_WB,mem_WB,inst_WB;
 /* verilator lint_on UNUSED */
 logic [1:0] WBSel_WB;
-assign sel_muxpc = br_comp | (hit & (taken[0] & taken[1]) ) ;
+assign sel_muxpc = br_comp | (hit & taken ) ;
+assign br_comp_o = br_comp;
 //--------Datapath------------
 //fix_alu s23 (alu,PCSel_EX,alu_fix);
-BTB     s24 (inst[6:4],br_comp,predicted_target_address,pc_EX[13:0],pc,taken,flag_br,tag,pc_predicted,rst_ni,clk_i);
+BTB     s24 (inst_ID[6:4],PCSel_EX,alu,pc_EX[13:0],pc,taken,flag_br,
+						tag,pc_predicted,test,rst_ni,clk_i);
 hit     s25 (pc[13:10],tag,flag_br,hit);
 //--------------IF------------
-mux2to1     s26(pc_predicted,predicted_target_address,br_comp,outmux_btb);
+mux2to1     s26(pc_predicted,alu,br_comp,outmux_btb);
 mux2to1     s1 (pc_i,outmux_btb,sel_muxpc,outmux_pc);		// choose alu or pc+4
 //always_taken s22(pc_ID,Imm,outmux_pc,inst_ID[6:0],target);
 PC          s2 (clk_i,stall_PC,rst_ni,outmux_pc,pc);// count up every posedge clock                                
