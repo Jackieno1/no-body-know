@@ -49,6 +49,10 @@ logic RegWen_WB;
 logic [Width-1:0] pc_WBp4,alu_WB,mem_WB,inst_WB;
 /* verilator lint_on UNUSED */
 logic [1:0] WBSel_WB;
+logic LBU_EX,LBU_MEM,LBU_WB;
+logic LH_EX,LH_MEM,LH_WB;
+logic LB_EX,LB_MEM,LB_WB;
+logic LHU_EX,LHU_MEM,LHU_WB;
 assign sel_muxpc = br_comp | (hit & taken ) ;
 assign br_comp_o = br_comp;
 //--------Datapath------------
@@ -69,14 +73,15 @@ Reg_IF_ID   s13 (clk_i,rst_ni,stall_ID,flush_IF_ID,pc,inst,pc_ID,inst_ID);
 //--------------ID------------										    
 ImmGen      s5  (inst_ID,ImmSel,Imm);												    
 RFv2        s6  (clk_i,rst_ni,RegWen_WB,inst_ID[19:15],inst_ID[24:20],
-			     inst_WB[11:7],WB,LB, LH, LBU, LHU,ra_signal,DataA,DataB);
+			     inst_WB[11:7],WB,LB_WB, LH_WB, LBU_WB, LHU_WB,ra_signal,DataA,DataB);
 //----------Reg ID/EX --------
 Reg_ID_EX   s14 (clk_i,rst_ni,flush_ID_EX,RegWen,WBSel,st_en,SB,SH,
 				 BrUn,ASel,BSel,PCSel,ALUop,
 				 pc_ID,DataA,DataB,Imm,inst_ID,
 				 RegWen_EX,st_en_EX,SB_EX,SH_EX,
 				 BrUn_EX,ASel_EX,BSel_EX,PCSel_EX,
-				 WBSel_EX,ALUop_EX,pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX);
+				 WBSel_EX,ALUop_EX,pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,LBU,LHU,LB,LH,
+				 LBU_EX,LHU_EX,LB_EX,LH_EX);
 				 
 //--------------EX------------
 Branch_Comp s7  (DataA_EX,DataB_EX,BrUn_EX,BrLt,BrEq);
@@ -88,7 +93,8 @@ Add			s27 (pc_EX,imm_EX,predicted_target_address);
 //----------Reg EX/MEM --------
 Reg_EX_MEM  s15 (clk_i,rst_ni,RegWen_EX,WBSel_EX,st_en_EX,SB_EX,SH_EX,
 				 pc_EX,alu,inst_EX,outmux,RegWen_MEM,WBSel_MEM,
-				 st_en_MEM,SB_MEM,SH_MEM,pc_MEM,alu_MEM,inst_MEM,outmux_MEM);
+				 st_en_MEM,SB_MEM,SH_MEM,pc_MEM,alu_MEM,inst_MEM,outmux_MEM,LBU_EX,LHU_EX,LB_EX,LH_EX,
+				 LBU_MEM,LHU_MEM,LB_MEM,LH_MEM);
 //--------------MEM------------
 Add			s16 (pc_MEM,32'h4,pc_MEMp4);
 LSU         s11 (alu_MEM[11:0],outmux_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd_o,
@@ -108,7 +114,8 @@ LSU         s11 (alu_MEM[11:0],outmux_MEM,io_sw_i,{SB_MEM,SH_MEM},ld_data,io_lcd
 												  	);
 //----------Reg MEM/WB--------
 Reg_MEM_WB  s17  (clk_i,rst_ni,RegWen_MEM,WBSel_MEM,pc_MEMp4,alu_MEM,ld_data,inst_MEM,
-				  RegWen_WB,WBSel_WB,pc_WBp4,alu_WB,mem_WB,inst_WB);
+				  RegWen_WB,WBSel_WB,pc_WBp4,alu_WB,mem_WB,inst_WB,LBU_MEM,LHU_MEM,LB_MEM,LH_MEM,
+				  LBU_WB,LHU_WB,LB_WB,LH_WB);
 //--------------WB------------
 mux3to1     s12  (mem_WB,alu_WB,pc_WBp4,WBSel_WB,WB);   // choose memory value, alu or pc+4 to write back  
 //----------Controller--------

@@ -40,10 +40,30 @@ always_ff @(posedge clk_i) begin
 			// cập nhật BTH 
 			// 
 		end 
-			if  (PCSel_EX ) 
-			mem_BTB [IM_address_i[9:2]][38:37] <= 2'b11 ;
-			else 
-			mem_BTB [IM_address_i[9:2]][38:37] <= 2'b00 ;
+// cap nhat BTH
+					case (mem_BTB[IM_address_i[9:2]][38:37]) 
+					2'b00:
+						if ( ~PCSel_EX)
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b00; 
+						else
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b01;
+					2'b01:
+						if ( ~PCSel_EX)
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b00; 
+						else
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b10;
+					2'b10:
+						if ( ~PCSel_EX)
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b01;
+						else
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b11;
+						default:
+						if ( ~PCSel_EX)
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b10; 
+						else
+						mem_BTB[IM_address_i[9:2]][38:37] <= 2'b11;
+					endcase
+						//
 	end
 
 end 

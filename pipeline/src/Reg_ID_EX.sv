@@ -19,7 +19,9 @@ module Reg_ID_EX #(parameter Width=32)(
 				 BrUn_EX,ASel_EX,BSel_EX,PCSel_EX,
 	output logic [1:0] WBSel_EX,
 	output logic [2:0] ALUop_EX,
-	output logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX
+	output logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,
+	input logic LBU,LHU,LB,LH,
+	output logic LBU_EX,LHU_EX,LB_EX,LH_EX
 );
 always_ff @(posedge clk_i) begin
  if(~rst_ni || flush) begin
@@ -34,7 +36,10 @@ always_ff @(posedge clk_i) begin
 	BSel_EX  	<= 1'b0;
 	BrUn_EX	 	<= 1'b0;
 	ALUop_EX	<= 3'b0;
-
+	LBU_EX	<= 1'b0;
+	LHU_EX  <= 1'b0;
+	LB_EX <= 1'b0;
+	LH_EX <= 1'b0;
  // data	
  	pc_EX    <= {Width{1'b0}};
  	DataA_EX <= {Width{1'b0}};
@@ -52,6 +57,10 @@ always_ff @(posedge clk_i) begin
 	BSel_EX  	<= BSel;
 	BrUn_EX	 	<= BrUn_ID;
 	ALUop_EX 	<= ALUop;
+LBU_EX 	<= LBU;
+LHU_EX <= LHU;
+LB_EX <= LB;
+LH_EX <= LH;
 	
  	pc_EX    <= pc_ID;
  	DataA_EX <= DataA_ID;
