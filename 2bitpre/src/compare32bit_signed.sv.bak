@@ -1,4 +1,5 @@
 /* verilator lint_off UNOPTFLAT */
+
 module compare32bit_signed (
     input logic [31:0] a,
     input logic [31:0] b,
@@ -11,7 +12,7 @@ logic [1:0] sign;
 
 genvar i;
 generate
-for ( i = 31; i >= 0; i = i - 1) begin : aa
+for ( i = 31; i >= 0; i = i - 1) begin
     compare1bit u (
         a[i], 
         b[i], 

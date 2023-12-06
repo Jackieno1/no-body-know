@@ -25,3 +25,4 @@
 ../src/Hazard_detection_unit.sv
 ../src/hit.sv
 ../src/BTB.sv
+../src/compare1bit.sv
