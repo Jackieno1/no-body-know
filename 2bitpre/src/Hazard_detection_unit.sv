@@ -5,17 +5,22 @@ module Hazard_detection_unit (
 //	input logic [1:0] WBSel_EX,
 /* verilator lint_off UNUSED */
 	input logic PCSel_EX,
+	input logic [4:0] rd_EX,rs1_ID,rs2_ID,rd_MEM,
+	input logic [6:0] op_ex,op_id,
+	input logic [31:0] pc_ID,alu,pc_EX,
 /* verilator lint_on UNUSED */
-	input logic [4:0] rd_EX,rs1_ID,rs2_ID,
-	input logic [6:0] op,
-	input logic [31:0] pc_ID,alu_EX,
-
 	//outputs
 	output logic stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,
 	output logic  comp_o
 );
+logic [31:0] temp;
 always_comb begin
-	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op == 7'b0000011)) begin
+case(PCSel_EX)
+	1'b1: temp = alu;
+	1'b0: temp = pc_EX + 32'h4;
+	default: temp = 32'b0;
+endcase
+	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_ex == 7'b0000011)) begin
 		stall_PC = 1'b1;
 		stall_ID = 1'b1;
 		flush_ID_EX  = 1'b1; 
@@ -24,6 +29,13 @@ always_comb begin
 		stall_ID = 1'b0;
 		flush_ID_EX  = 1'b0; 		
 	end
+	if(((rs1_ID == rd_MEM) || (rs2_ID == rd_MEM)) && (op_id[6:4] == 3'b110)) begin
+		stall_PC = 1'b1;
+		stall_ID = 1'b1;
+	end else begin
+	    stall_PC = 1'b0;
+		stall_ID = 1'b0;	
+	end	
 	
 /*	
 	if(op == 7'b1101111)begin
@@ -38,12 +50,14 @@ always_comb begin
 	else
 		flush_ID_EX = 1'b0;
 	*/
-	if(op[6:4] != 3'b110)  begin
+
+		
+	if(op_ex[6:4] != 3'b110)  begin
 		comp_o = 1'b0;
 		flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;	
 	end else
-		if(alu_EX == pc_ID) begin
+		if(temp == pc_ID) begin
 		comp_o = 1'b0;
 		flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;

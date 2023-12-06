@@ -12,7 +12,7 @@ void drv_in(Vtop *dut, vluint64_t sim_unit) {
     dut->eval();
   }
 
-  if (sim_unit == 20) {
+  if (sim_unit == 3) {
  	temp = rand()%number_32_bit;
  
   	}

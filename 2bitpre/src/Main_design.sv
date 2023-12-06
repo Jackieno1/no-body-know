@@ -84,7 +84,7 @@ Reg_ID_EX   s14 (clk_i,rst_ni,flush_ID_EX,RegWen,WBSel,st_en,SB,SH,
 				 LBU_EX,LHU_EX,LB_EX,LH_EX);
 				 
 //--------------EX------------
-Branch_Comp s7  (DataA_EX,DataB_EX,BrUn_EX,BrLt,BrEq);
+Branch_Comp s7  (DataA,DataB,BrUn_EX,BrLt,BrEq);
 mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choose rs1 for jalr or pc for jal
 mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
 mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
@@ -126,7 +126,8 @@ ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);//receive signal 
 //----------Hazard forwarding unit--------
 Forwarding 	s20(inst_EX[19:15],inst_EX[24:20],inst_MEM[11:7],inst_WB[11:7],
 				ASel_EX,RegWen_MEM,RegWen_WB,forwardingA,forwardingB);
-Hazard_detection_unit s21(PCSel_EX,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],inst_EX[6:0],pc_ID,alu,
+Hazard_detection_unit s21(PCSel_EX,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],inst_MEM[11:7],inst_EX[6:0],
+							inst_ID[6:0],pc_ID,alu,pc_EX,
 						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp);
 assign pc_debug_o = pc;
 endmodule: Main_design
