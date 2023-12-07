@@ -32,133 +32,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     if (vlSelf->rst_ni) {
         vlSelf->top__DOT__singleCycle__DOT__s11__DOT__sw_reg 
             = vlSelf->io_sw_i;
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2 
-            = vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2;
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2 
-            = ((vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y 
-                >> 0x1fU) ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2 
-            = ((0x40000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x29____pinNumber2 
-            = ((0x20000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x29____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x28____pinNumber2 
-            = ((0x10000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x28____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x27____pinNumber2 
-            = ((0x8000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x27____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x26____pinNumber2 
-            = ((0x4000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x26____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x25____pinNumber2 
-            = ((0x2000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x25____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x24____pinNumber2 
-            = ((0x1000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x24____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x23____pinNumber2 
-            = ((0x800000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x23____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x22____pinNumber2 
-            = ((0x400000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x22____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x21____pinNumber2 
-            = ((0x200000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x21____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x20____pinNumber2 
-            = ((0x100000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x20____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x19____pinNumber2 
-            = ((0x80000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x19____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x18____pinNumber2 
-            = ((0x40000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x18____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x17____pinNumber2 
-            = ((0x20000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x17____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x16____pinNumber2 
-            = ((0x10000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x16____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x15____pinNumber2 
-            = ((0x8000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x15____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x14____pinNumber2 
-            = ((0x4000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x14____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x13____pinNumber2 
-            = ((0x2000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x13____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x12____pinNumber2 
-            = ((0x1000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x12____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x11____pinNumber2 
-            = ((0x800U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x11____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x10____pinNumber2 
-            = ((0x400U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x10____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x9____pinNumber2 
-            = ((0x200U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x9____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x8____pinNumber2 
-            = ((0x100U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x8____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x7____pinNumber2 
-            = ((0x80U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x7____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x6____pinNumber2 
-            = ((0x40U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x6____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x5____pinNumber2 
-            = ((0x20U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x5____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x4____pinNumber2 
-            = ((0x10U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x4____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x3____pinNumber2 
-            = ((8U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x3____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2 
-            = ((4U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
-                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2);
-        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2 
-            = ((1U & (vlSelf->top__DOT__singleCycle__DOT__ss__DOT__control_signal 
-                      | (vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y 
-                         >> 1U))) ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
-                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2);
         if (vlSelf->top__DOT__singleCycle__DOT__st_en_MEM) {
             if ((0x800U & vlSelf->top__DOT__singleCycle__DOT__alu_MEM)) {
                 if ((0U == (7U & (vlSelf->top__DOT__singleCycle__DOT__alu_MEM 
@@ -445,8 +318,155 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                 }
             }
         }
+        vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix2 
+            = ((IData)(vlSelf->top__DOT__singleCycle__DOT__th2_2)
+                ? vlSelf->top__DOT__singleCycle__DOT__alu_MEM
+                : vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix2);
+        vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix1 
+            = ((IData)(vlSelf->top__DOT__singleCycle__DOT__th2_1)
+                ? vlSelf->top__DOT__singleCycle__DOT__alu_MEM
+                : vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix1);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2 
+            = vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2;
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2 
+            = ((vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y 
+                >> 0x1fU) ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2 
+            = ((0x40000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x29____pinNumber2 
+            = ((0x20000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x29____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x28____pinNumber2 
+            = ((0x10000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x28____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x27____pinNumber2 
+            = ((0x8000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x27____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x26____pinNumber2 
+            = ((0x4000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x26____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x25____pinNumber2 
+            = ((0x2000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x25____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x24____pinNumber2 
+            = ((0x1000000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x24____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x23____pinNumber2 
+            = ((0x800000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x23____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x22____pinNumber2 
+            = ((0x400000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x22____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x21____pinNumber2 
+            = ((0x200000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x21____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x20____pinNumber2 
+            = ((0x100000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x20____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x19____pinNumber2 
+            = ((0x80000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x19____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x18____pinNumber2 
+            = ((0x40000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x18____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x17____pinNumber2 
+            = ((0x20000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x17____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x16____pinNumber2 
+            = ((0x10000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x16____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x15____pinNumber2 
+            = ((0x8000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x15____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x14____pinNumber2 
+            = ((0x4000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x14____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x13____pinNumber2 
+            = ((0x2000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x13____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x12____pinNumber2 
+            = ((0x1000U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x12____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x11____pinNumber2 
+            = ((0x800U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x11____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x10____pinNumber2 
+            = ((0x400U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x10____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x9____pinNumber2 
+            = ((0x200U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x9____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x8____pinNumber2 
+            = ((0x100U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x8____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x7____pinNumber2 
+            = ((0x80U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x7____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x6____pinNumber2 
+            = ((0x40U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x6____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x5____pinNumber2 
+            = ((0x20U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x5____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x4____pinNumber2 
+            = ((0x10U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x4____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x3____pinNumber2 
+            = ((8U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x3____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2 
+            = ((4U & vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y)
+                ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2);
+        vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2 
+            = ((1U & (vlSelf->top__DOT__singleCycle__DOT__ss__DOT__control_signal 
+                      | (vlSelf->top__DOT__singleCycle__DOT__s6__DOT__Y 
+                         >> 1U))) ? vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp
+                : vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2);
     } else {
         vlSelf->top__DOT__singleCycle__DOT__s11__DOT__sw_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex0_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledg_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__lcd_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex4_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex1_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex6_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex5_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex3_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex2_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex7_reg = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix2 = 0U;
+        vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix1 = 0U;
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2 = 0U;
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x31____pinNumber2 = 0U;
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x30____pinNumber2 = 0U;
@@ -479,16 +499,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x3____pinNumber2 = 0U;
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2 = 0U;
         vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2 = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex0_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledg_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__lcd_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex4_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex1_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex6_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex5_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex3_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex2_reg = 0U;
-        vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex7_reg = 0U;
         __Vdlyvset__top__DOT__singleCycle__DOT__s11__DOT__mem__v3 = 1U;
     }
     if (__Vdlyvset__top__DOT__singleCycle__DOT__s11__DOT__mem__v0) {
@@ -518,6 +528,17 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
             __Vilp = ((IData)(1U) + __Vilp);
         }
     }
+    vlSelf->io_hex0_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex0_reg;
+    vlSelf->io_ledg_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledg_reg;
+    vlSelf->io_lcd_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__lcd_reg;
+    vlSelf->io_hex4_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex4_reg;
+    vlSelf->io_hex1_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex1_reg;
+    vlSelf->io_hex6_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex6_reg;
+    vlSelf->io_hex5_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex5_reg;
+    vlSelf->io_hex3_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex3_reg;
+    vlSelf->io_hex2_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex2_reg;
+    vlSelf->io_ledr_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledr_reg;
+    vlSelf->io_hex7_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex7_reg;
     vlSelf->top__DOT__singleCycle__DOT__s6__DOT__d[0U] 
         = vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x0____pinNumber2;
     vlSelf->top__DOT__singleCycle__DOT__s6__DOT__d[0x1fU] 
@@ -582,17 +603,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x2____pinNumber2;
     vlSelf->top__DOT__singleCycle__DOT__s6__DOT__d[1U] 
         = vlSelf->top__DOT__singleCycle__DOT__s6__DOT____Vcellout__x1____pinNumber2;
-    vlSelf->io_hex0_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex0_reg;
-    vlSelf->io_ledg_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledg_reg;
-    vlSelf->io_lcd_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__lcd_reg;
-    vlSelf->io_hex4_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex4_reg;
-    vlSelf->io_hex1_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex1_reg;
-    vlSelf->io_hex6_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex6_reg;
-    vlSelf->io_hex5_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex5_reg;
-    vlSelf->io_hex3_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex3_reg;
-    vlSelf->io_hex2_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex2_reg;
-    vlSelf->io_ledr_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledr_reg;
-    vlSelf->io_hex7_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex7_reg;
 }
 
 extern const VlUnpacked<IData/*31:0*/, 64> Vtop__ConstPool__TABLE_h59e4a426_0;
@@ -634,6 +644,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
                                                    : vlSelf->top__DOT__singleCycle__DOT__outmux_pc);
         vlSelf->top__DOT__singleCycle__DOT__outmux_MEM 
             = vlSelf->top__DOT__singleCycle__DOT__outmux;
+        vlSelf->top__DOT__singleCycle__DOT__WBSel_WB 
+            = vlSelf->top__DOT__singleCycle__DOT__WBSel_MEM;
+        vlSelf->top__DOT__singleCycle__DOT__pc_WBp4 
+            = ((IData)(4U) + vlSelf->top__DOT__singleCycle__DOT__pc_MEM);
         if (vlSelf->top__DOT__singleCycle__DOT__s24__DOT__br_write_en_i) {
             __Vdlyvval__top__DOT__singleCycle__DOT__s24__DOT__mem_BTB__v0 
                 = vlSelf->top__DOT__singleCycle__DOT__alu;
@@ -691,10 +705,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
         __Vdlyvdim0__top__DOT__singleCycle__DOT__s24__DOT__mem_BTB__v3 
             = (0xffU & (vlSelf->top__DOT__singleCycle__DOT__pc_EX 
                         >> 2U));
-        vlSelf->top__DOT__singleCycle__DOT__WBSel_WB 
-            = vlSelf->top__DOT__singleCycle__DOT__WBSel_MEM;
-        vlSelf->top__DOT__singleCycle__DOT__pc_WBp4 
-            = ((IData)(4U) + vlSelf->top__DOT__singleCycle__DOT__pc_MEM);
         vlSelf->top__DOT__singleCycle__DOT__alu_WB 
             = vlSelf->top__DOT__singleCycle__DOT__alu_MEM;
         vlSelf->top__DOT__singleCycle__DOT__inst_WB 
@@ -729,13 +739,13 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
                     : vlSelf->top__DOT__singleCycle__DOT__s11__DOT__mem
                    [(0x1ffU & (vlSelf->top__DOT__singleCycle__DOT__alu_MEM 
                                >> 2U))]));
-        vlSelf->top__DOT__singleCycle__DOT__s24__DOT__br_write_en_i 
-            = (6U == (7U & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                            >> 4U)));
         vlSelf->top__DOT__singleCycle__DOT__WBSel_MEM 
             = vlSelf->top__DOT__singleCycle__DOT__WBSel_EX;
         vlSelf->top__DOT__singleCycle__DOT__pc_MEM 
             = vlSelf->top__DOT__singleCycle__DOT__pc_EX;
+        vlSelf->top__DOT__singleCycle__DOT__s24__DOT__br_write_en_i 
+            = (6U == (7U & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                            >> 4U)));
         vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
             = vlSelf->top__DOT__singleCycle__DOT__inst_EX;
         vlSelf->top__DOT__singleCycle__DOT__alu_MEM 
@@ -755,9 +765,9 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
     } else {
         __Vdly__top__DOT__singleCycle__DOT__pc = 0U;
         vlSelf->top__DOT__singleCycle__DOT__outmux_MEM = 0U;
-        __Vdlyvset__top__DOT__singleCycle__DOT__s24__DOT__mem_BTB__v4 = 1U;
         vlSelf->top__DOT__singleCycle__DOT__WBSel_WB = 0U;
         vlSelf->top__DOT__singleCycle__DOT__pc_WBp4 = 0U;
+        __Vdlyvset__top__DOT__singleCycle__DOT__s24__DOT__mem_BTB__v4 = 1U;
         vlSelf->top__DOT__singleCycle__DOT__alu_WB = 0U;
         vlSelf->top__DOT__singleCycle__DOT__inst_WB = 0U;
         vlSelf->top__DOT__singleCycle__DOT__mem_WB = 0U;
@@ -915,6 +925,20 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
                                                     == (IData)(vlSelf->top__DOT__singleCycle__DOT__WBSel_WB))
                                                     ? vlSelf->top__DOT__singleCycle__DOT__pc_WBp4
                                                     : 0U)));
+    vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp 
+        = ((IData)(vlSelf->top__DOT__singleCycle__DOT__LB_WB)
+            ? (((- (IData)((1U & (vlSelf->top__DOT__singleCycle__DOT__WB 
+                                  >> 7U)))) << 8U) 
+               | (0xffU & vlSelf->top__DOT__singleCycle__DOT__WB))
+            : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LH_WB)
+                ? (((- (IData)((1U & (vlSelf->top__DOT__singleCycle__DOT__WB 
+                                      >> 0xfU)))) << 0x10U) 
+                   | (0xffffU & vlSelf->top__DOT__singleCycle__DOT__WB))
+                : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LBU_WB)
+                    ? (0xffU & vlSelf->top__DOT__singleCycle__DOT__WB)
+                    : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LHU_WB)
+                        ? (0xffffU & vlSelf->top__DOT__singleCycle__DOT__WB)
+                        : vlSelf->top__DOT__singleCycle__DOT__WB))));
     vlSelf->top__DOT__singleCycle__DOT__LH_EX = (1U 
                                                  & ((~ 
                                                      ((~ (IData)(vlSelf->rst_ni)) 
@@ -947,65 +971,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
                                                                  | (IData)(vlSelf->top__DOT__singleCycle__DOT__flush_ID_EX)))));
     vlSelf->top__DOT__singleCycle__DOT__pc_ID = __Vdly__top__DOT__singleCycle__DOT__pc_ID;
     vlSelf->top__DOT__singleCycle__DOT__inst_ID = __Vdly__top__DOT__singleCycle__DOT__inst_ID;
-    vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s31____pinNumber3 
-        = (((IData)(((0x60U == (0x70U & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                     & (((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                   >> 0xfU)) == (0x1fU 
-                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                    >> 7U))) 
-                        | ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                     >> 0x14U)) == 
-                           (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                     >> 7U)))))) & 
-            (0U != (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                             >> 7U)))) | ((~ ((IData)(
-                                                      ((0x60U 
-                                                        == 
-                                                        (0x70U 
-                                                         & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                                                       & (((0x1fU 
-                                                            & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                               >> 0xfU)) 
-                                                           == 
-                                                           (0x1fU 
-                                                            & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                               >> 7U))) 
-                                                          | ((0x1fU 
-                                                              & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                 >> 0x14U)) 
-                                                             == 
-                                                             (0x1fU 
-                                                              & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                                 >> 7U)))))) 
-                                              & (0U 
-                                                 != 
-                                                 (0x1fU 
-                                                  & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                     >> 7U))))) 
-                                          & ((IData)(
-                                                     ((0x60U 
-                                                       == 
-                                                       (0x70U 
-                                                        & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                                                      & (((0x1fU 
-                                                           & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                              >> 0xfU)) 
-                                                          == 
-                                                          (0x1fU 
-                                                           & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
-                                                              >> 7U))) 
-                                                         | ((0x1fU 
-                                                             & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                >> 0x14U)) 
-                                                            == 
-                                                            (0x1fU 
-                                                             & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
-                                                                >> 7U)))))) 
-                                             & (0U 
-                                                != 
-                                                (0x1fU 
-                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
-                                                    >> 7U))))));
     vlSelf->top__DOT__singleCycle__DOT__ALUSel = ((4U 
                                                    & (IData)(vlSelf->top__DOT__singleCycle__DOT__ALUop_EX))
                                                    ? (IData)(vlSelf->top__DOT__singleCycle__DOT__sa__DOT____Vxrand_h96ff575f__2)
@@ -1134,6 +1099,108 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__1(Vtop___024root* vlSelf) {
                                                      & (IData)(vlSelf->top__DOT__singleCycle__DOT__ALUop_EX))
                                                      ? 0xaU
                                                      : 0U)));
+    vlSelf->top__DOT__singleCycle__DOT__th2_2 = ((~ 
+                                                  ((IData)(
+                                                           ((0x60U 
+                                                             == 
+                                                             (0x70U 
+                                                              & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                            & (((0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                    >> 0xfU)) 
+                                                                == 
+                                                                (0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                                    >> 7U))) 
+                                                               | ((0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                      >> 0x14U)) 
+                                                                  == 
+                                                                  (0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                                      >> 7U)))))) 
+                                                   & (0U 
+                                                      != 
+                                                      (0x1fU 
+                                                       & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                          >> 7U))))) 
+                                                 & ((~ 
+                                                     ((IData)(
+                                                              ((0x60U 
+                                                                == 
+                                                                (0x70U 
+                                                                 & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                               & ((0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                      >> 0xfU)) 
+                                                                  == 
+                                                                  (0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                                      >> 7U))))) 
+                                                      & (0U 
+                                                         != 
+                                                         (0x1fU 
+                                                          & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                             >> 7U))))) 
+                                                    & ((IData)(
+                                                               ((0x60U 
+                                                                 == 
+                                                                 (0x70U 
+                                                                  & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                                & ((0x1fU 
+                                                                    & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                       >> 0x14U)) 
+                                                                   == 
+                                                                   (0x1fU 
+                                                                    & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                                       >> 7U))))) 
+                                                       & (0U 
+                                                          != 
+                                                          (0x1fU 
+                                                           & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                              >> 7U))))));
+    vlSelf->top__DOT__singleCycle__DOT__th2_1 = ((~ 
+                                                  ((IData)(
+                                                           ((0x60U 
+                                                             == 
+                                                             (0x70U 
+                                                              & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                            & (((0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                    >> 0xfU)) 
+                                                                == 
+                                                                (0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                                    >> 7U))) 
+                                                               | ((0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                      >> 0x14U)) 
+                                                                  == 
+                                                                  (0x1fU 
+                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                                      >> 7U)))))) 
+                                                   & (0U 
+                                                      != 
+                                                      (0x1fU 
+                                                       & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                          >> 7U))))) 
+                                                 & ((IData)(
+                                                            ((0x60U 
+                                                              == 
+                                                              (0x70U 
+                                                               & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                             & ((0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                    >> 0xfU)) 
+                                                                == 
+                                                                (0x1fU 
+                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                                    >> 7U))))) 
+                                                    & (0U 
+                                                       != 
+                                                       (0x1fU 
+                                                        & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                           >> 7U)))));
     vlSelf->top__DOT__singleCycle__DOT__forwardingA 
         = ((((IData)(vlSelf->top__DOT__singleCycle__DOT__RegWen_MEM) 
              & ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
@@ -1581,9 +1648,15 @@ VL_INLINE_OPT void Vtop___024root___multiclk__TOP__0(Vtop___024root* vlSelf) {
                                                       : 
                                                      vlSelf->top__DOT__singleCycle__DOT__s6__DOT__d
                                                      [0U])))));
+    vlSelf->top__DOT__singleCycle__DOT__fix_br1 = ((IData)(vlSelf->top__DOT__singleCycle__DOT__th2_1)
+                                                    ? vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix1
+                                                    : vlSelf->top__DOT__singleCycle__DOT__DataA);
+    vlSelf->top__DOT__singleCycle__DOT__fix_br2 = ((IData)(vlSelf->top__DOT__singleCycle__DOT__th2_2)
+                                                    ? vlSelf->top__DOT__singleCycle__DOT__alu_MEM_fix2
+                                                    : vlSelf->top__DOT__singleCycle__DOT__DataB);
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT__sign 
-        = ((2U & (vlSelf->top__DOT__singleCycle__DOT__DataA 
-                  >> 0x1eU)) | (vlSelf->top__DOT__singleCycle__DOT__DataB 
+        = ((2U & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                  >> 0x1eU)) | (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                 >> 0x1fU));
 }
 
@@ -2269,161 +2342,161 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
     }
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber7 
         = ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-            >> 0x1fU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                             ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+            >> 0x1fU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                             ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                             >> 0x1eU)));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x1eU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x1eU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x1dU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__28__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x1dU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x1dU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x1cU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__27__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x1cU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x1cU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x1bU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__26__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x1bU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x1bU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x1aU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__25__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x1aU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x1aU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x19U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__24__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x19U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x19U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x18U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__23__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x18U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x18U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x17U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__22__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x17U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x17U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x16U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__21__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x16U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x16U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x15U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__20__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x15U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x15U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x14U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__19__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x14U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x14U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x13U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__18__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x13U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x13U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x12U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__17__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x12U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x12U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x11U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__16__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x11U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x11U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0x10U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__15__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0x10U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                   ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0x10U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                   ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                   >> 0xfU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__14__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xfU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xfU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 0xeU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__13__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xeU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xeU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 0xdU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__12__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xdU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xdU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 0xcU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__11__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xcU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xcU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 0xbU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__10__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xbU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xbU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 0xaU))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__9__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 0xaU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                  ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 0xaU) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                  ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                  >> 9U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__8__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 9U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 9U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 8U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__7__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 8U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 8U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 7U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__6__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 7U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 7U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 6U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__5__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 6U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 6U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 5U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__4__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 5U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 5U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 4U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__3__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 4U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 4U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 3U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__2__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 3U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 3U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 2U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__1__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 2U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                                ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+                  >> 2U) & (~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                                ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                                >> 1U))));
     top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__0__KET____DOT__u____pinNumber7 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                  >> 1U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
-                               ^ vlSelf->top__DOT__singleCycle__DOT__DataB))));
+                  >> 1U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                               ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
-        = ((0x80000000U & (vlSelf->top__DOT__singleCycle__DOT__DataA 
-                           & ((~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+        = ((0x80000000U & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                           & ((~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1fU)) << 0x1fU))) 
            | (((IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber6) 
                << 0x1eU) | (((IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber6) 
@@ -2485,9 +2558,9 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                                                                                 << 1U) 
                                                                                 | (IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__0__KET____DOT__u____pinNumber6))))))))))))))))))))))))))))))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
-        = ((0x80000000U & (((~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+        = ((0x80000000U & (((~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                 >> 0x1fU)) << 0x1fU) 
-                           & vlSelf->top__DOT__singleCycle__DOT__DataB)) 
+                           & vlSelf->top__DOT__singleCycle__DOT__fix_br2)) 
            | (((IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber8) 
                << 0x1eU) | (((IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber8) 
                              << 0x1dU) | (((IData)(vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__28__KET____DOT__u____pinNumber8) 
@@ -3568,8 +3641,8 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                               >> 1U) & (~ vlSelf->top__DOT__singleCycle__DOT__outmux_branch)) 
                             & vlSelf->top__DOT__singleCycle__DOT__outmux2fb)));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-        = (((~ ((vlSelf->top__DOT__singleCycle__DOT__DataA 
-                 ^ vlSelf->top__DOT__singleCycle__DOT__DataB) 
+        = (((~ ((vlSelf->top__DOT__singleCycle__DOT__fix_br1 
+                 ^ vlSelf->top__DOT__singleCycle__DOT__fix_br2) 
                 >> 0x1fU)) << 0x1fU) | (((IData)(top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber7) 
                                          << 0x1eU) 
                                         | (((IData)(top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber7) 
@@ -3634,433 +3707,433 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1fU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1fU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1fU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x1eU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x1eU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1eU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1eU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1eU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x1dU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x1dU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__28__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1dU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1dU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1dU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x1cU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x1cU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__27__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1cU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1cU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1cU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x1bU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x1bU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__26__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1bU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1bU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1bU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x1aU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x1aU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__25__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x1aU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1aU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1aU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x19U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x19U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__24__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x19U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x19U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x19U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x18U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x18U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__23__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x18U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x18U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x18U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x17U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x17U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__22__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x17U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x17U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x17U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x16U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x16U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__21__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x16U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x16U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x16U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x15U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x15U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__20__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x15U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x15U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x15U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x14U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x14U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__19__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x14U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x14U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x14U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x13U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x13U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__18__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x13U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x13U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x13U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x12U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x12U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__17__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x12U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x12U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x12U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x11U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x11U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__16__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x11U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x11U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x11U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0x10U)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0x10U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__15__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0x10U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x10U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x10U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                               >> 0xfU)) 
-                               & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                      >> 0xfU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__14__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xfU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xfU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xfU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 0xeU)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 0xeU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__13__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xeU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xeU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xeU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 0xdU)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 0xdU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__12__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xdU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xdU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xdU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 0xcU)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 0xcU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__11__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xcU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xcU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xcU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 0xbU)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 0xbU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__10__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xbU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xbU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xbU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 0xaU)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 0xaU)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__9__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 0xaU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xaU) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xaU) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                             >> 9U)) 
-                              & (~ (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                     >> 9U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__8__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 9U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 9U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 9U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 8U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 8U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__7__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 8U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 8U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 8U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 7U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 7U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__6__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 7U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 7U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 7U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 6U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 6U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__5__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 6U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 6U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 6U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 5U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 5U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__4__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 5U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 5U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 5U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 4U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 4U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__3__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 4U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 4U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 4U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 3U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 3U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__2__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 3U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 3U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 3U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 2U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 2U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__1__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 2U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 2U) & (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 2U) & (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                         >> 1U)) & (~ 
-                                                   (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                                                   (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                                     >> 1U)))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__0__KET____DOT__u____pinNumber6 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__ogt 
                   >> 1U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 1U) & vlSelf->top__DOT__singleCycle__DOT__DataA) 
-                            & (~ vlSelf->top__DOT__singleCycle__DOT__DataB))));
+                              >> 1U) & vlSelf->top__DOT__singleCycle__DOT__fix_br1) 
+                            & (~ vlSelf->top__DOT__singleCycle__DOT__fix_br2))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__30__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1fU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1fU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1fU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x1eU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1eU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__29__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1eU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1eU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1eU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x1dU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1dU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__28__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1dU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1dU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1dU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x1cU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1cU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__27__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1cU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1cU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1cU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x1bU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1bU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__26__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1bU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1bU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1bU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x1aU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x1aU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__25__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x1aU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x1aU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x1aU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x19U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x19U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__24__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x19U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x19U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x19U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x18U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x18U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__23__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x18U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x18U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x18U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x17U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x17U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__22__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x17U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x17U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x17U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x16U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x16U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__21__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x16U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x16U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x16U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x15U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x15U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__20__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x15U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x15U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x15U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x14U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x14U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__19__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x14U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x14U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x14U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x13U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x13U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__18__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x13U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x13U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x13U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x12U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x12U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__17__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x12U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x12U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x12U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x11U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x11U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__16__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x11U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x11U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x11U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0x10U))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0x10U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__15__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0x10U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                 >> 0x10U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                 >> 0x10U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                  >> 0xfU))) 
-                               & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                               & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                   >> 0xfU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__14__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xfU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xfU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xfU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 0xeU))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 0xeU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__13__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xeU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xeU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xeU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 0xdU))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 0xdU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__12__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xdU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xdU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xdU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 0xcU))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 0xcU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__11__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xcU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xcU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xcU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 0xbU))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 0xbU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__10__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xbU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xbU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xbU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 0xaU))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 0xaU))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__9__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 0xaU) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                                >> 0xaU) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                                >> 0xaU) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                                >> 9U))) 
-                              & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                              & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                  >> 9U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__8__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 9U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 9U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 9U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 8U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 8U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__7__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 8U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 8U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 8U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 7U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 7U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__6__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 7U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 7U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 7U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 6U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 6U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__5__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 6U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 6U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 6U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 5U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 5U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__4__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 5U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 5U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 5U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 4U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 4U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__3__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 4U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 4U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 4U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 3U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 3U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__2__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 3U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 3U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 3U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 2U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 2U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__1__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 2U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 2U) & (~ (vlSelf->top__DOT__singleCycle__DOT__DataA 
+                              >> 2U) & (~ (vlSelf->top__DOT__singleCycle__DOT__fix_br1 
                                            >> 1U))) 
-                            & (vlSelf->top__DOT__singleCycle__DOT__DataB 
+                            & (vlSelf->top__DOT__singleCycle__DOT__fix_br2 
                                >> 1U))));
     vlSelf->top__DOT__singleCycle__DOT__s7__DOT____Vcellout__cc__BRA__0__KET____DOT__u____pinNumber8 
         = (1U & ((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__olt 
                   >> 1U) | (((vlSelf->top__DOT__singleCycle__DOT__s7__DOT__oeq 
-                              >> 1U) & (~ vlSelf->top__DOT__singleCycle__DOT__DataA)) 
-                            & vlSelf->top__DOT__singleCycle__DOT__DataB)));
+                              >> 1U) & (~ vlSelf->top__DOT__singleCycle__DOT__fix_br1)) 
+                            & vlSelf->top__DOT__singleCycle__DOT__fix_br2)));
     vlSelf->top__DOT__singleCycle__DOT__alu = ((8U 
                                                 & (IData)(vlSelf->top__DOT__singleCycle__DOT__ALUSel))
                                                 ? (
@@ -4317,9 +4390,6 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                                                 : vlSelf->top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h948b7eef__0)))
                                     : vlSelf->top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h8e767337__1)
                                 : vlSelf->top__DOT__singleCycle__DOT__ss__DOT____Vxrand_h8e767337__1))))));
-    vlSelf->top__DOT__singleCycle__DOT__fix_wb = ((IData)(vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s31____pinNumber3)
-                                                   ? vlSelf->top__DOT__singleCycle__DOT__alu
-                                                   : vlSelf->top__DOT__singleCycle__DOT__WB);
     vlSelf->top__DOT__singleCycle__DOT__s21__DOT__temp 
         = ((IData)(vlSelf->top__DOT__singleCycle__DOT__PCSel_EX)
             ? vlSelf->top__DOT__singleCycle__DOT__alu
@@ -4338,19 +4408,17 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__singleCycle__DOT__stall_PC = 0U;
         vlSelf->top__DOT__singleCycle__DOT__stall_ID = 0U;
     }
-    if ((((IData)(((0x60U == (0x70U & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                   & (((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                 >> 0xfU)) == (0x1fU 
-                                               & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                  >> 7U))) 
-                      | ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                   >> 0x14U)) == (0x1fU 
-                                                  & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                     >> 7U)))))) 
-          & (0U != (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                             >> 0xfU)))) & (0U != (0x1fU 
-                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                      >> 0x14U))))) {
+    if (((IData)(((0x60U == (0x70U & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                  & (((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                >> 0xfU)) == (0x1fU 
+                                              & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                 >> 7U))) 
+                     | ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                  >> 0x14U)) == (0x1fU 
+                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                    >> 7U)))))) 
+         & (0U != (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                            >> 7U))))) {
         vlSelf->top__DOT__singleCycle__DOT__stall_PC = 1U;
         vlSelf->top__DOT__singleCycle__DOT__stall_ID = 1U;
     } else {
@@ -4453,21 +4521,6 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                                                       << 0xcU) 
                                                      | (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
                                                         >> 0x14U)))));
-    vlSelf->fix_wb_o = vlSelf->top__DOT__singleCycle__DOT__fix_wb;
-    vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp 
-        = ((IData)(vlSelf->top__DOT__singleCycle__DOT__LB_WB)
-            ? (((- (IData)((1U & (vlSelf->top__DOT__singleCycle__DOT__fix_wb 
-                                  >> 7U)))) << 8U) 
-               | (0xffU & vlSelf->top__DOT__singleCycle__DOT__fix_wb))
-            : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LH_WB)
-                ? (((- (IData)((1U & (vlSelf->top__DOT__singleCycle__DOT__fix_wb 
-                                      >> 0xfU)))) << 0x10U) 
-                   | (0xffffU & vlSelf->top__DOT__singleCycle__DOT__fix_wb))
-                : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LBU_WB)
-                    ? (0xffU & vlSelf->top__DOT__singleCycle__DOT__fix_wb)
-                    : ((IData)(vlSelf->top__DOT__singleCycle__DOT__LHU_WB)
-                        ? (0xffffU & vlSelf->top__DOT__singleCycle__DOT__fix_wb)
-                        : vlSelf->top__DOT__singleCycle__DOT__fix_wb))));
     vlSelf->br_comp_o = vlSelf->top__DOT__singleCycle__DOT__br_comp;
     vlSelf->top__DOT__singleCycle__DOT__outmux_pc = 
         (((IData)(vlSelf->top__DOT__singleCycle__DOT__br_comp) 

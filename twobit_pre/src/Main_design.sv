@@ -3,7 +3,6 @@ module Main_design #(parameter Width=32)(
 	input logic [Width-1:0]io_sw_i,
 	//output
 	output logic br_comp_o,
-	output logic [Width-1:0]fix_wb_o,
 	output logic [Width-1:0]io_lcd_o,
 							io_ledg_o,
 							io_ledr_o,
@@ -53,12 +52,12 @@ logic LBU_EX,LBU_MEM,LBU_WB;
 logic LH_EX,LH_MEM,LH_WB;
 logic LB_EX,LB_MEM,LB_WB;
 logic LHU_EX,LHU_MEM,LHU_WB;
-logic th1,th2,flush_new;
-logic [Width-1:0] fix_wb;
+logic th1,th2_1,flush_new,th2_2;
+logic [Width-1:0] fix_br1,fix_br2,alu_MEM_fix1,alu_MEM_fix2;
 /* verilator lint_on UNUSED */
 assign sel_muxpc = br_comp | (hit & taken ) ;
 assign br_comp_o = br_comp;
-assign fix_wb_o = fix_wb;
+
 //--------Datapath------------
 //fix_alu s23 (alu,PCSel_EX,alu_fix);
 BTB     s24 (inst_ID[6:4],PCSel_EX,alu,pc_EX[13:0],pc,taken,flag_br,
@@ -76,11 +75,15 @@ Reg_IF_ID   s13 (clk_i,rst_ni,stall_ID,flush_IF_ID,pc,inst,pc_ID,inst_ID);
                      
 //--------------ID------------	
 Forwarding_ID s30(inst_ID[19:15],inst_ID[24:20],inst_EX[11:7],inst_MEM[11:7],inst_ID[6:4],
-					th1,th2);									    
+					th1,th2_1,th2_2);									    
 ImmGen      s5  (inst_ID,ImmSel,Imm);	
-mux2to1		s31 (WB,alu,(th1|th2),fix_wb);											    
 RFv2        s6  (clk_i,rst_ni,RegWen_WB,inst_ID[19:15],inst_ID[24:20],
-			     inst_WB[11:7],fix_wb,LB_WB, LH_WB, LBU_WB, LHU_WB,ra_signal,DataA,DataB);
+			     inst_WB[11:7],WB,LB_WB, LH_WB, LBU_WB, LHU_WB,ra_signal,DataA,DataB);
+Reg 		s34 (alu_MEM,alu_MEM_fix1,clk_i,rst_ni,th2_1);
+Reg 		s35 (alu_MEM,alu_MEM_fix2,clk_i,rst_ni,th2_2);
+mux2to1 	s32 (DataA,alu_MEM_fix1,th2_1,fix_br1);
+mux2to1		s33 (DataB,alu_MEM_fix2,th2_2,fix_br2);
+Branch_Comp s7  (fix_br1,fix_br2,BrUn_EX,BrLt,BrEq);
 //----------Reg ID/EX --------
 Reg_ID_EX   s14 (clk_i,rst_ni,(flush_ID_EX ),RegWen,WBSel,st_en,SB,SH,
 				 BrUn,ASel,BSel,PCSel,ALUop,
@@ -91,7 +94,6 @@ Reg_ID_EX   s14 (clk_i,rst_ni,(flush_ID_EX ),RegWen,WBSel,st_en,SB,SH,
 				 LBU_EX,LHU_EX,LB_EX,LH_EX);
 				 
 //--------------EX------------
-Branch_Comp s7  (DataA,DataB,BrUn_EX,BrLt,BrEq);
 mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choose rs1 for jalr or pc for jal
 mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
 mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
@@ -133,7 +135,7 @@ ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);//receive signal 
 //----------Hazard forwarding unit--------
 Forwarding 	s20(inst_EX[19:15],inst_EX[24:20],inst_MEM[11:7],inst_WB[11:7],
 				ASel_EX,RegWen_MEM,RegWen_WB,forwardingA,forwardingB);
-Hazard_detection_unit s21(PCSel_EX,th1,th2,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],
+Hazard_detection_unit s21(PCSel_EX,th1,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],
 						  inst_MEM[11:7],inst_EX[19:15],inst_EX[24:20],inst_WB[11:7],inst_EX[6:0],
 						  inst_ID[6:0],pc_ID,alu,pc_EX,
 						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp,
