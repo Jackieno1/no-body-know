@@ -26,3 +26,4 @@
 ../src/hit.sv
 ../src/BTB.sv
 ../src/compare1bit.sv
+../src/Forwarding_ID.sv
