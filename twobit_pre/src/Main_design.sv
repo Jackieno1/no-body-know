@@ -34,7 +34,7 @@ logic [3:0] tag;
 logic  taken;
 logic stall_PC,flush_IF_ID,flag_br,hit,sel_muxpc; 
 // second stage
-logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb; 
+logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb,PC_jump_EX; 
 logic [1:0] WBSel_EX,forwardingA,forwardingB;
 logic [2:0] ALUop_EX;
 logic BrUn_EX,st_en_EX,SB_EX,SH_EX,RegWen_EX,stall_ID;
@@ -53,7 +53,7 @@ logic LBU_EX,LBU_MEM,LBU_WB;
 logic LH_EX,LH_MEM,LH_WB;
 logic LB_EX,LB_MEM,LB_WB;
 logic LHU_EX,LHU_MEM,LHU_WB;
-logic th1,th2;
+logic th1,th2,flush_new;
 logic [Width-1:0] fix_wb;
 /* verilator lint_on UNUSED */
 assign sel_muxpc = br_comp | (hit & taken ) ;
@@ -65,7 +65,7 @@ BTB     s24 (inst_ID[6:4],PCSel_EX,alu,pc_EX[13:0],pc,taken,flag_br,
 						tag,pc_predicted,test,rst_ni,clk_i);
 hit     s25 (pc[13:10],tag,flag_br,hit);
 //--------------IF------------
-mux2to1     s26(pc_predicted,alu,br_comp,outmux_btb);
+mux2to1     s26(pc_predicted,PC_jump_EX,br_comp,outmux_btb);
 mux2to1     s1 (pc_i,outmux_btb,sel_muxpc,outmux_pc);		// choose alu or pc+4
 //always_taken s22(pc_ID,Imm,outmux_pc,inst_ID[6:0],target);
 PC          s2 (clk_i,stall_PC,rst_ni,outmux_pc,pc);// count up every posedge clock                                
@@ -136,6 +136,7 @@ Forwarding 	s20(inst_EX[19:15],inst_EX[24:20],inst_MEM[11:7],inst_WB[11:7],
 Hazard_detection_unit s21(PCSel_EX,th1,th2,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],
 						  inst_MEM[11:7],inst_EX[19:15],inst_EX[24:20],inst_WB[11:7],inst_EX[6:0],
 						  inst_ID[6:0],pc_ID,alu,pc_EX,
-						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp);
+						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp,
+						  PC_jump_EX);
 assign pc_debug_o = pc;
 endmodule: Main_design

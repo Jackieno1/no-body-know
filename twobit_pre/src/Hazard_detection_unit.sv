@@ -11,7 +11,8 @@ module Hazard_detection_unit (
 /* verilator lint_on UNUSED */
 	//outputs
 	output logic stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,
-	output logic  comp_o
+	output logic  comp_o,
+	output logic  [31:0] PC_jump_EX
 );
 logic [31:0] temp;
 always_comb begin
@@ -91,6 +92,7 @@ if(stall_PC && stall_ID)
 	flush_ID_EX = 1'b1;
 else
 	flush_ID_EX = 1'b0;
+PC_jump_EX = temp; 
 	
 end
 endmodule

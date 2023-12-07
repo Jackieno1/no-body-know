@@ -313,6 +313,65 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->io_hex0_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex0_reg;
     vlSelf->io_ledr_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__ledr_reg;
     vlSelf->io_hex7_o = vlSelf->top__DOT__singleCycle__DOT__s11__DOT__hex7_reg;
+    vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s31____pinNumber3 
+        = (((IData)(((0x60U == (0x70U & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                     & (((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                   >> 0xfU)) == (0x1fU 
+                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                    >> 7U))) 
+                        | ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                     >> 0x14U)) == 
+                           (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                     >> 7U)))))) & 
+            (0U != (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                             >> 7U)))) | ((~ ((IData)(
+                                                      ((0x60U 
+                                                        == 
+                                                        (0x70U 
+                                                         & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                       & (((0x1fU 
+                                                            & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                               >> 0xfU)) 
+                                                           == 
+                                                           (0x1fU 
+                                                            & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                               >> 7U))) 
+                                                          | ((0x1fU 
+                                                              & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                 >> 0x14U)) 
+                                                             == 
+                                                             (0x1fU 
+                                                              & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                                 >> 7U)))))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x1fU 
+                                                  & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
+                                                     >> 7U))))) 
+                                          & ((IData)(
+                                                     ((0x60U 
+                                                       == 
+                                                       (0x70U 
+                                                        & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
+                                                      & (((0x1fU 
+                                                           & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                              >> 0xfU)) 
+                                                          == 
+                                                          (0x1fU 
+                                                           & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                              >> 7U))) 
+                                                         | ((0x1fU 
+                                                             & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
+                                                                >> 0x14U)) 
+                                                            == 
+                                                            (0x1fU 
+                                                             & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                                >> 7U)))))) 
+                                             & (0U 
+                                                != 
+                                                (0x1fU 
+                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
+                                                    >> 7U))))));
     vlSelf->top__DOT__singleCycle__DOT__forwardingA 
         = ((((IData)(vlSelf->top__DOT__singleCycle__DOT__RegWen_MEM) 
              & ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
@@ -3592,63 +3651,7 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                       : 
                                                      (vlSelf->top__DOT__singleCycle__DOT__outmux_branch 
                                                       + vlSelf->top__DOT__singleCycle__DOT__outmux2fb)))));
-    vlSelf->top__DOT__singleCycle__DOT__fix_wb = (((IData)(
-                                                           ((0x60U 
-                                                             == 
-                                                             (0x70U 
-                                                              & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                                                            & (((0x1fU 
-                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                    >> 0xfU)) 
-                                                                == 
-                                                                (0x1fU 
-                                                                 & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                                    >> 7U))) 
-                                                               | ((0x1fU 
-                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                      >> 0x14U)) 
-                                                                  == 
-                                                                  (0x1fU 
-                                                                   & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                                      >> 7U)))))) 
-                                                   | ((~ (IData)(
-                                                                 ((0x60U 
-                                                                   == 
-                                                                   (0x70U 
-                                                                    & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                                                                  & (((0x1fU 
-                                                                       & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                          >> 0xfU)) 
-                                                                      == 
-                                                                      (0x1fU 
-                                                                       & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                                          >> 7U))) 
-                                                                     | ((0x1fU 
-                                                                         & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                            >> 0x14U)) 
-                                                                        == 
-                                                                        (0x1fU 
-                                                                         & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                                            >> 7U))))))) 
-                                                      & (IData)(
-                                                                ((0x60U 
-                                                                  == 
-                                                                  (0x70U 
-                                                                   & vlSelf->top__DOT__singleCycle__DOT__inst_ID)) 
-                                                                 & (((0x1fU 
-                                                                      & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                         >> 0xfU)) 
-                                                                     == 
-                                                                     (0x1fU 
-                                                                      & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
-                                                                         >> 7U))) 
-                                                                    | ((0x1fU 
-                                                                        & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                                                                           >> 0x14U)) 
-                                                                       == 
-                                                                       (0x1fU 
-                                                                        & (vlSelf->top__DOT__singleCycle__DOT__inst_MEM 
-                                                                           >> 7U))))))))
+    vlSelf->top__DOT__singleCycle__DOT__fix_wb = ((IData)(vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s31____pinNumber3)
                                                    ? vlSelf->top__DOT__singleCycle__DOT__alu
                                                    : vlSelf->top__DOT__singleCycle__DOT__WB);
     vlSelf->top__DOT__singleCycle__DOT__s21__DOT__temp 
@@ -3706,6 +3709,8 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__singleCycle__DOT__flush_ID_EX 
         = ((IData)(vlSelf->top__DOT__singleCycle__DOT__stall_PC) 
            & (IData)(vlSelf->top__DOT__singleCycle__DOT__stall_ID));
+    vlSelf->top__DOT__singleCycle__DOT__PC_jump_EX 
+        = vlSelf->top__DOT__singleCycle__DOT__s21__DOT__temp;
     vlSelf->fix_wb_o = vlSelf->top__DOT__singleCycle__DOT__fix_wb;
     vlSelf->top__DOT__singleCycle__DOT__s6__DOT__temp 
         = ((IData)(vlSelf->top__DOT__singleCycle__DOT__LB_WB)
@@ -3739,7 +3744,7 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                         [(0xffU & (vlSelf->top__DOT__singleCycle__DOT__pc 
                                    >> 2U))] >> 0x26U))))
           ? ((IData)(vlSelf->top__DOT__singleCycle__DOT__br_comp)
-              ? vlSelf->top__DOT__singleCycle__DOT__alu
+              ? vlSelf->top__DOT__singleCycle__DOT__PC_jump_EX
               : (IData)(vlSelf->top__DOT__singleCycle__DOT__s24__DOT__mem_BTB
                         [(0xffU & (vlSelf->top__DOT__singleCycle__DOT__pc 
                                    >> 2U))])) : ((IData)(4U) 
@@ -3823,6 +3828,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__singleCycle__DOT__imm_EX = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__singleCycle__DOT__inst_EX = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__singleCycle__DOT__outmux2fb = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__singleCycle__DOT__PC_jump_EX = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__singleCycle__DOT__WBSel_EX = VL_RAND_RESET_I(2);
     vlSelf->top__DOT__singleCycle__DOT__forwardingA = VL_RAND_RESET_I(2);
     vlSelf->top__DOT__singleCycle__DOT__forwardingB = VL_RAND_RESET_I(2);
@@ -3865,7 +3871,9 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__singleCycle__DOT__LHU_EX = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__singleCycle__DOT__LHU_MEM = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__singleCycle__DOT__LHU_WB = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__singleCycle__DOT__flush_new = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__singleCycle__DOT__fix_wb = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s31____pinNumber3 = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__singleCycle__DOT____Vcellinp__s11____pinNumber4 = VL_RAND_RESET_I(2);
     for (int __Vi0=0; __Vi0<256; ++__Vi0) {
         vlSelf->top__DOT__singleCycle__DOT__s24__DOT__mem_BTB[__Vi0] = VL_RAND_RESET_Q(39);
