@@ -29,10 +29,12 @@ endcase
 	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_ex == 7'b0000011)) begin
 		stall_PC = 1'b1;
 		stall_ID = 1'b1;
+		flush_IF_ID = 1'b0;
 		flush_ID_EX  = 1'b1; 
 	end else begin
 		stall_PC = 1'b0;
 		stall_ID = 1'b0;
+		flush_IF_ID = 1'b0;
 		flush_ID_EX  = 1'b0; 		
 	end
 /*
@@ -50,10 +52,12 @@ endcase
 	if(th1)begin
 		stall_PC = 1'b1;
 		stall_ID = 1'b1;
+		flush_IF_ID = 1'b0;
 		flush_ID_EX = 1'b1;
 	end else begin
 		stall_PC = 1'b0;
 		stall_ID = 1'b0;
+		flush_IF_ID = 1'b0;
 		flush_ID_EX = 1'b0;			
 	end
 /*	if(((rs1_ID == rd_MEM) || (rs2_ID == rd_MEM)) && (op_id[6:4] == 3'b110))  begin
