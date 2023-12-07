@@ -16,7 +16,11 @@ module Hazard_detection_unit (
 );
 logic [31:0] temp;
 always_comb begin
-
+/*if(stall_PC && stall_ID)
+	flush_ID_EX = 1'b1;
+else
+	flush_ID_EX = 1'b0;
+*/	
 case(PCSel_EX)
 	1'b1: temp = alu;
 	1'b0: temp = pc_EX + 32'h4;
@@ -25,13 +29,13 @@ endcase
 	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_ex == 7'b0000011)) begin
 		stall_PC = 1'b1;
 		stall_ID = 1'b1;
-	//	flush_ID_EX  = 1'b1; 
+		flush_ID_EX  = 1'b1; 
 	end else begin
 		stall_PC = 1'b0;
 		stall_ID = 1'b0;
-	//	flush_ID_EX  = 1'b0; 		
+		flush_ID_EX  = 1'b0; 		
 	end
-	/*
+/*
 	if((( (rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_id[6:4] == 3'b110)) 
 				&& (rs1_ID != 5'd0) && (rs2_ID != 5'd0)) begin
 		stall_PC = 1'b1;
@@ -46,9 +50,11 @@ endcase
 	if(th1)begin
 		stall_PC = 1'b1;
 		stall_ID = 1'b1;
+		flush_ID_EX = 1'b1;
 	end else begin
 		stall_PC = 1'b0;
-		stall_ID = 1'b0;		
+		stall_ID = 1'b0;
+		flush_ID_EX = 1'b0;			
 	end
 /*	if(((rs1_ID == rd_MEM) || (rs2_ID == rd_MEM)) && (op_id[6:4] == 3'b110))  begin
 		stall_PC = 1'b1;
@@ -84,22 +90,19 @@ endcase
 		
 	if(op_ex[6:4] != 3'b110)  begin
 		comp_o = 1'b0;
-	flush_ID_EX = 1'b0;
+	    flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;	
 	end else
 		if(temp == pc_ID) begin
 		comp_o = 1'b0;
-	flush_ID_EX = 1'b0;
+	    flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;
 	end else begin
 		comp_o = 1'b1;
 		flush_ID_EX = 1'b1;
 		flush_IF_ID = 1'b1;
 	end
-if(stall_PC && stall_ID)
-	flush_ID_EX = 1'b1;
-else
-	flush_ID_EX = 1'b0;
+
 PC_jump_EX = temp; 
 	
 end
