@@ -15,6 +15,8 @@ module Hazard_detection_unit (
 	output logic  [31:0] PC_jump_EX
 );
 logic [31:0] temp;
+logic temp_p1,temp_p2,temp_p3;
+logic temp_i1,temp_i2,temp_i3;
 always_comb begin
 	case(PCSel_EX)
 		1'b1: temp = alu;
@@ -23,40 +25,46 @@ always_comb begin
 	endcase
 //lw stall
 	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_ex == 7'b0000011)) begin
-		stall_PC = 1'b1;
-		stall_ID = 1'b1;
-		flush_IF_ID = 1'b0;
+		temp_p1 = 1'b1;
+		temp_i1 = 1'b1;
+		flush_IF_ID = 1'b1;
 		flush_ID_EX  = 1'b1; 
 	end else begin
-		stall_PC = 1'b0;
-		stall_ID = 1'b0;
+		temp_p1 = 1'b0;
+		temp_i1 = 1'b0;
 		flush_IF_ID = 1'b0;
 		flush_ID_EX  = 1'b0; 		
 	end
 // stall branch sat nhau
-	if(th1)begin
-		stall_PC = 1'b1;
-		stall_ID = 1'b1;
+	if(th1) begin
+		temp_p2 = 1'b1;
+		temp_i2 = 1'b1;
 		flush_IF_ID = 1'b0;
 		flush_ID_EX = 1'b1;
 	end else begin
-		stall_PC = 1'b0;
-		stall_ID = 1'b0;
+		temp_p2 = 1'b0;
+		temp_i2 = 1'b0;
 		flush_IF_ID = 1'b0;
 		flush_ID_EX = 1'b0;			
 	end
 //compare de fix		
 	if(op_ex[6:4] != 3'b110)  begin
 		comp_o = 1'b0;
+		temp_p3 = 1'b0;
+		temp_i3 = 1'b0;
 	    flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;	
 	end else
 		if(temp == pc_ID) begin
 		comp_o = 1'b0;
+		temp_p3 = 1'b0;
+		temp_i3 = 1'b0;
 	    flush_ID_EX = 1'b0;
 		flush_IF_ID = 1'b0;
 	end else begin
 		comp_o = 1'b1;
+		temp_p3 = 1'b0;
+		temp_i3 = 1'b0;
 		flush_ID_EX = 1'b1;
 		flush_IF_ID = 1'b1;
 	end
@@ -64,4 +72,6 @@ always_comb begin
 PC_jump_EX = temp; 
 	
 end
+assign stall_PC = temp_p1 | temp_p2 | temp_p3;
+assign stall_ID = temp_i1 | temp_i2 | temp_i3;
 endmodule
