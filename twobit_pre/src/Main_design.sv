@@ -2,6 +2,7 @@ module Main_design #(parameter Width=32)(
 	//input
 	input logic [Width-1:0]io_sw_i,
 	//output
+	output logic [31:0] count,
 	output logic br_comp_o,
 	output logic [Width-1:0]io_lcd_o,
 							io_ledg_o,
@@ -56,6 +57,7 @@ logic [Width-1:0] fix_br1,fix_br2,alu_MEM_fix1,alu_MEM_fix2;
 assign sel_muxpc = br_comp | (hit & taken ) ;
 assign br_comp_o = br_comp;
 //--------Datapath------------
+count_br 	saa(clk_i,rst_ni,inst_EX[6:4],count);
 BTB           s24 (inst_ID[6:4],PCSel_EX,alu,pc_EX[13:0],pc,taken,flag_br,
 			       tag,pc_predicted,test,rst_ni,clk_i);
 hit           s25 (pc[13:10],tag,flag_br,hit);

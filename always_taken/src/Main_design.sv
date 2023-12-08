@@ -2,6 +2,7 @@ module Main_design #(parameter Width=32)(
 	//input
 	input logic [Width-1:0]io_sw_i,
 	//output
+	output logic [31:0] count,
 	output logic br_comp_o,
 	output logic [Width-1:0]io_lcd_o,
 							io_ledg_o,
@@ -53,9 +54,11 @@ logic LB_EX,LB_MEM,LB_WB;
 logic LHU_EX,LHU_MEM,LHU_WB;
 logic th1,th2_1,th2_2;
 logic [Width-1:0] fix_br1,fix_br2,alu_MEM_fix1,alu_MEM_fix2;
+
 assign sel_muxpc = br_comp | (hit & taken ) ;
 assign br_comp_o = br_comp;
 //--------Datapath------------
+count_br saaa(clk_i,rst_ni,inst_EX[6:4],count);
 BTB           s24 (inst_ID[6:4],PCSel_EX,alu,pc_EX[13:0],pc,taken,flag_br,
 			       tag,pc_predicted,test,rst_ni,clk_i);
 hit           s25 (pc[13:10],tag,flag_br,hit);
@@ -94,7 +97,7 @@ Reg_ID_EX   s14 (clk_i,rst_ni,flush_ID_EX,RegWen,WBSel,st_en,SB,SH,
 //--------------EX------------
 mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choose rs1 for jalr or pc for jal
 mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
-mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
+//mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
 ALU         s10 (outmux_branch,outmux2fb,ALUSel,alu);
 //----------Reg EX/MEM --------
 Reg_EX_MEM  s15 (clk_i,rst_ni,RegWen_EX,WBSel_EX,st_en_EX,SB_EX,SH_EX,
@@ -136,4 +139,5 @@ Hazard_detection_unit s21(PCSel_EX,th1,inst_EX[11:7],inst_ID[19:15],inst_ID[24:2
 						  stall_PC,stall_ID,flush_ID_EX,flush_IF_ID,br_comp,
 						  PC_jump_EX);
 assign pc_debug_o = pc;
+
 endmodule: Main_design

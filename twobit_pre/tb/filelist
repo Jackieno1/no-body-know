@@ -27,3 +27,4 @@
 ../src/BTB.sv
 ../src/compare1bit.sv
 ../src/Forwarding_ID.sv
+../src/count_br.sv

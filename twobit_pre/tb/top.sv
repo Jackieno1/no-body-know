@@ -14,7 +14,7 @@ module top
   output logic [31:0]      io_hex5_o ,
   output logic [31:0]      io_hex6_o ,
   output logic [31:0]      io_hex7_o ,
-
+  output logic [31:0]	   count,
   output logic [31:0]      pc_debug_o,
   output logic br_comp_o,
   // Clock and asynchronous reset active low
@@ -22,7 +22,7 @@ module top
   input  logic             rst_ni
 );
 
-  Main_design singleCycle (
+  Main_design pipeline (
     .io_sw_i   (io_sw_i   ),
     .io_lcd_o  (io_lcd_o  ),
     .io_ledg_o (io_ledg_o ),
@@ -38,7 +38,8 @@ module top
     .pc_debug_o(pc_debug_o),
     .br_comp_o (br_comp_o),
     .clk_i     (clk_i     ),
-    .rst_ni    (rst_ni    )
+    .rst_ni    (rst_ni    ),
+        .count 	   (count)
   );
 
 endmodule : top
