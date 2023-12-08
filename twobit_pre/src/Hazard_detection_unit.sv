@@ -29,7 +29,7 @@ always_comb begin
 	if(((rs1_ID == rd_EX) || (rs2_ID == rd_EX)) && (op_ex == 7'b0000011)) begin
 		temp_p1 = 1'b1;
 		temp_i1 = 1'b1;
-		flush_id1 = 1'b1;
+		flush_id1 = 1'b0;
 		flush_ex1  = 1'b1; 
 	end else begin
 		temp_p1 = 1'b0;

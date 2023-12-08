@@ -4536,6 +4536,9 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
                                                       << 0xcU) 
                                                      | (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
                                                         >> 0x14U)))));
+    vlSelf->top__DOT__singleCycle__DOT__flush_IF_ID 
+        = ((IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__flush_id2) 
+           | (IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__flush_id3));
     vlSelf->top__DOT__singleCycle__DOT__stall_ID = 
         ((((((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
                        >> 0xfU)) == (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
@@ -4546,16 +4549,6 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
            & (3U == (0x7fU & vlSelf->top__DOT__singleCycle__DOT__inst_EX))) 
           | (IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__temp_i2)) 
          | (IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__temp_i3));
-    vlSelf->top__DOT__singleCycle__DOT__flush_IF_ID 
-        = ((((((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                         >> 0xfU)) == (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                >> 7U))) 
-              | ((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
-                           >> 0x14U)) == (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
-                                                   >> 7U)))) 
-             & (3U == (0x7fU & vlSelf->top__DOT__singleCycle__DOT__inst_EX))) 
-            | (IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__flush_id2)) 
-           | (IData)(vlSelf->top__DOT__singleCycle__DOT__s21__DOT__flush_id3));
     vlSelf->top__DOT__singleCycle__DOT__flush_ID_EX 
         = ((((((0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_ID 
                          >> 0xfU)) == (0x1fU & (vlSelf->top__DOT__singleCycle__DOT__inst_EX 
