@@ -37,7 +37,9 @@ logic stall_PC,flush_IF_ID,flag_br,hit,sel_muxpc;
 logic [Width-1:0] pc_EX,DataA_EX,DataB_EX,imm_EX,inst_EX,outmux2fb,PC_jump_EX; 
 logic [1:0] WBSel_EX,forwardingA,forwardingB;
 logic [2:0] ALUop_EX;
+/* verilator lint_off UNUSED */
 logic BrUn_EX,st_en_EX,SB_EX,SH_EX,RegWen_EX,stall_ID;
+/* verilator lint_on UNUSED */
 // third stage
 logic [Width-1:0]pc_MEM,alu_MEM,inst_MEM,pc_MEMp4,outmux_MEM;
 logic [1:0] WBSel_MEM;
@@ -83,7 +85,7 @@ Reg 		s34 (alu_MEM,alu_MEM_fix1,clk_i,rst_ni,th2_1);
 Reg 		s35 (alu_MEM,alu_MEM_fix2,clk_i,rst_ni,th2_2);
 mux2to1 	s32 (DataA,alu_MEM_fix1,th2_1,fix_br1);
 mux2to1		s33 (DataB,alu_MEM_fix2,th2_2,fix_br2);
-Branch_Comp s7  (fix_br1,fix_br2,BrUn_EX,BrLt,BrEq);
+Branch_Comp s7  (fix_br1,fix_br2,BrUn,BrLt,BrEq);
 //----------Reg ID/EX --------
 Reg_ID_EX   s14 (clk_i,rst_ni,flush_ID_EX,RegWen,WBSel,st_en,SB,SH,
 				 BrUn,ASel,BSel,PCSel,ALUop,
@@ -98,6 +100,7 @@ mux4to1     s8  (DataA_EX,pc_EX,WB,alu_MEM,forwardingA,outmux_branch);   // choo
 mux4to1     s9  (DataB_EX,imm_EX,WB,alu_MEM,forwardingB,outmux);// choose imm value or value in registers
 mux2to1     sx  (outmux,imm_EX,BSel_EX,outmux2fb);
 ALU         s10 (outmux_branch,outmux2fb,ALUSel,alu);
+ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);
 //----------Reg EX/MEM --------
 Reg_EX_MEM  s15 (clk_i,rst_ni,RegWen_EX,WBSel_EX,st_en_EX,SB_EX,SH_EX,
 				 pc_EX,alu,inst_EX,outmux,RegWen_MEM,WBSel_MEM,
@@ -130,7 +133,6 @@ mux3to1     s12  (mem_WB,alu_WB,pc_WBp4,WBSel_WB,WB);   // choose memory value, 
 Main_controller ss(inst_ID[Width-26:0],inst_ID[14:12],BrLt,BrEq,
 				   RegWen,BSel,st_en,WBSel,LB, LH,LBU,LHU,
 				   SB, SH,BrUn,PCSel,ASel,ImmSel,ALUop,ra_signal);
-ALU_Controller  sa(ALUop_EX,inst_EX[14:12],inst_EX[30],ALUSel);//receive signal from Main_controller to control ALU
 //----------Hazard forwarding unit--------
 Hazard_detection_unit s21(PCSel_EX,th1,inst_EX[11:7],inst_ID[19:15],inst_ID[24:20],
 						  inst_MEM[11:7],inst_EX[19:15],inst_EX[24:20],inst_WB[11:7],inst_EX[6:0],
